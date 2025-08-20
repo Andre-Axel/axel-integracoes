@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projetos e Cases de Sucesso - Automação | Axel Integrações</title>
+    <meta name="description" content="Conheça os projetos de automação e integração realizados pela Axel Integrações. Cases reais com resultados comprovados em WhatsApp, CRM, ERPs e mais.">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/ICONE2.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/ICONE2.png">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+        
+    <link rel="stylesheet" href="assets/css/animations.css">
+    <script src="assets/js/animations.js"></script>
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'brand-dark': '#2F414F',
+                        'brand-blue': '#3894A3', 
+                        'brand-light': '#F1F1EF',
+                        'brand-green': '#C7DAD4'
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'system-ui', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        /* CSS Mínimo e Limpo */
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        /* Animações sutis */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 25px -5px rgba(47, 65, 79, 0.1);
+        }
+        
+        /* Navegação ativa */
+        .nav-active {
+            color: #3894A3 !important;
+            border-bottom: 2px solid #3894A3;
+        }
+        
+        /* Responsividade específica */
+        @media (max-width: 640px) {
+            .mobile-menu {
+                transform: translateX(-100%);
+                transition: transform 0.3s ease;
+            }
+            
+            .mobile-menu.active {
+                transform: translateX(0);
+            }
+        }
+    </style>
+</head>
+<body class="bg-brand-light">
+    <!-- Navigation -->
+    <nav class="bg-white/95 backdrop-blur-lg shadow-sm fixed w-full top-0 z-50 border-b border-brand-green/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16 sm:h-20">
+                <!-- Logo -->
+                <div class="flex items-center space-x-3">
+                    <div class="w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center">
+                        <img src="assets/images/ICONE2.png" alt="Axel Integrações" class="w-full h-full object-contain">
+                    </div>
+                    <div>
+                        <span class="font-bold text-lg sm:text-xl text-brand-dark">Axel Integrações</span>
+                        <div class="text-xs text-brand-blue font-medium hidden sm:block">Automação & Integração</div>
+                    </div>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-brand-dark/80 hover:text-brand-blue px-3 py-2 font-medium transition-colors">Início</a>
+                    <a href="sobre.html" class="text-brand-dark/80 hover:text-brand-blue px-3 py-2 font-medium transition-colors">Sobre</a>
+                    <a href="projetos.html" class="nav-active px-3 py-2 font-medium transition-colors">Projetos</a>
+                    <a href="contato.html" class="text-brand-dark/80 hover:text-brand-blue px-3 py-2 font-medium transition-colors">Contato</a>
+                </div>
+                
+                <!-- CTA Button -->
+                <div class="flex items-center space-x-4">
+                    <a href="https://wa.me/5519997330171?text=Olá! Vi os projetos e gostaria de discutir uma automação similar." 
+                       target="_blank" 
+                       class="bg-brand-blue hover:bg-brand-blue/90 text-white px-4 py-2 sm:px-6 sm:py-3 rounded-xl font-semibold transition-all duration-300 flex items-center space-x-2 shadow-lg hover:shadow-xl">
+                        <i class="fab fa-whatsapp text-lg"></i>
+                        <span class="hidden sm:inline">Conversar</span>
+                    </a>
+                    
+                    <!-- Mobile Menu Button -->
+                    <button class="md:hidden p-2 text-brand-dark" id="mobile-menu-btn">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div class="md:hidden mobile-menu bg-white border-t border-brand-green/20 absolute w-full" id="mobile-menu">
+            <div class="px-4 py-6 space-y-4">
+                <a href="index.html" class="block text-brand-dark hover:text-brand-blue transition-colors font-medium">Início</a>
+                <a href="sobre.html" class="block text-brand-dark hover:text-brand-blue transition-colors font-medium">Sobre</a>
+                <a href="projetos.html" class="block text-brand-blue font-semibold">Projetos</a>
+                <a href="contato.html" class="block text-brand-dark hover:text-brand-blue transition-colors font-medium">Contato</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-20 pb-12 sm:pt-24 sm:pb-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <div class="inline-flex items-center bg-brand-blue/20 text-brand-dark rounded-full px-4 py-2 text-sm font-medium mb-6">
+                    Portfólio de projetos
+                </div>
+                <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-brand-dark mb-6">
+                    Cases de <span class="text-brand-blue">Sucesso</span> Reais
+                </h1>
+                <p class="text-lg sm:text-xl text-brand-dark/70 max-w-3xl mx-auto">
+                    Conheça os projetos que transformaram processos empresariais, eliminaram tarefas manuais e aumentaram a produtividade.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projetos Grid -->
+    <section class="py-16 sm:py-20 bg-brand-light/30">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-8">
+                
+                <!-- Projeto 1 - WhatsApp Status -->
+                <div class="card-hover bg-white rounded-3xl overflow-hidden shadow-xl border border-brand-green/10">
+                    <div class="bg-gradient-to-br from-brand-blue to-brand-dark p-8 text-white">
+                        <div class="flex items-center space-x-4 mb-6">
+                            <div class="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center">
+                                <i class="fab fa-whatsapp text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold">Status Automático WhatsApp</h3>
+                                <div class="text-brand-green text-sm">Assistência Técnica</div>
+                            </div>
+                        </div>
+                        
+                        <div class="grid grid-cols-3 gap-4 text-center">
+                            <div>
+                                <div class="text-2xl font-bold text-brand-green">70%</div>
+                                <div class="text-xs opacity-80">Redução Trabalho</div>
+                            </div>
+                            <div>
+                                <div class="text-2xl font-bold text-brand-green">95%</div>
+                                <div class="text-xs opacity-80">Satisfação Cliente</div>
+                            </div>
+                            <div>
+                                <div class="text-2xl font-bold text-brand-green">24/7</div>
+                                <div class="text-xs opacity-80">Funcionamento</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="p-8 space-y-6">
+                        <div>
+                            <h4 class="font-semibold text-red-600 mb-2 flex items-center">
+                                <i class="fas fa-exclamation-circle mr-2"></i>
+                                Problema
+                            </h4>
+                            <p class="text-brand-dark/70">
+                                Assistência técnica precisava informar clientes sobre status dos aparelhos manualmente, consumindo horas da equipe diariamente.
+                            </p>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-semibold text-brand-blue mb-2 flex items-center">
+                                <i class="fas fa-lightbulb mr-2"></i>
+                                Solução
+                            </h4>
+                            <p class="text-brand-dark/70">
+                                Sistema automático que envia mensagens WhatsApp sempre que status muda: "Em manutenção", "Aguardando peça", "Pronto para retirada".
+                            </p>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-semibold text-brand-green mb-2 flex items-center">
+                                <i class="fas fa-chart-line mr-2"></i>
+                                Resultado
+                            </h4>
+                            <p class="text-brand-dark/70">
+                                70% menos trabalho manual, clientes sempre informados e equipe focada em reparos de maior valor.
+                            </p>
+                        </div>
+                        
+                        <div class="flex flex-wrap gap-2 pt-4">
+                            <span class="bg-brand-blue/20 text-brand-blue px-3 py-1 rounded-full text-sm font-medium">WhatsApp API</span>
+                            <span class="bg-brand-blue/20 text-brand-blue px-3 py-1 rounded-full text-sm font-medium">MySQL</span>
+                            <span class="bg-brand-blue/20 text-brand-blue px-3 py-1 rounded-full text-sm font-medium">n8n</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Projeto 2 - Leads Imobiliária -->
+                <div class="card-hover bg-white rounded-3xl overflow-hidden shadow-xl border border-brand-green/10">
+                    <div class="bg-gradient-to-br from-brand-green to-brand-blue p-8 text-white">
+                        <div class="flex items-center space-x-4 mb-6">
+                            <div class="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center">
+                                <i class="fas fa-home text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold">Captura Instantânea de Leads</h3>
+                                <div class="text-brand-light text-sm">Imobiliária Digital</div>
+                            </div>
+                        </div>
+                        
+                        <div class="grid grid-cols-3 gap-4 text-center">
+                            <div>
+                                <div class="text-2xl font-bold text-brand-light">85%</div>
+                                <div class="text-xs opacity-80">Mais Conversões</div>
+                            </div>
+                            <div>
+                                <div class="text-2xl font-bold text-brand-light">30s</div>
+                                <div class="text-xs opacity-80">Tempo Resposta</div>
+                            </div>
+                            <div>
+                                <div class="text-2xl font-bold text-brand-light">100%</div>
+                                <div class="text-xs opacity-80">Leads Capturados</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="p-8 space-y-6">
+                        <div>
+                            <h4 class="font-semibold text-red-600 mb-2 flex items-center">
+                                <i class="fas fa-exclamation-circle mr-2"></i>
+                                Problema
+                            </h4>
+                            <p class="text-brand-dark/70">
+                                Leads do site eram perdidos por atendimento lento. Clientes desistiam antes do primeiro contato.
+                            </p>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-semibold text-brand-blue mb-2 flex items-center">
+                                <i class="fas fa-lightbulb mr-2"></i>
+                                Solução
+                            </h4>
+                            <p class="text-brand-dark/70">
+                                Automação que detecta leads, cria cadastro no CRM e envia mensagem WhatsApp instantaneamente.
+                            </p>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-semibold text-brand-green mb-2 flex items-center">
+                                <i class="fas fa-chart-line mr-2"></i>
+                                Resultado
+                            </h4>
+                            <p class="text-brand-dark/70">
+                                85% mais conversões, atendimento em 30 segundos, zero leads perdidos.
+                            </p>
+                        </div>
+                        
+                        <div class="flex flex-wrap gap-2 pt-4">
+                            <span class="bg-brand-green/20 text-brand-green px-3 py-1 rounded-full text-sm font-medium">WordPress</span>
+                            <span class="bg-brand-green/20 text-brand-green px-3 py-1 rounded-full text-sm font-medium">CRM</span>
+                            <span class="bg-brand-green/20 text-brand-green px-3 py-1 rounded-full text-sm font-medium">WhatsApp</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Estatísticas -->
+    <section class="py-16 sm:py-20 bg-gradient-to-r from-brand-dark to-brand-blue text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl sm:text-4xl font-bold mb-6">Resultados Comprovados</h2>
+                <p class="text-lg text-white/80 max-w-2xl mx-auto">
+                    Números reais dos projetos implementados que demonstram o impacto da automação
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                <div class="text-center">
+                    <div class="text-4xl sm:text-5xl font-bold text-brand-green mb-2">15+</div>
+                    <div class="text-white/80">Projetos Entregues</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-4xl sm:text-5xl font-bold text-brand-green mb-2">70%</div>
+                    <div class="text-white/80">Redução Média de Tempo</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-4xl sm:text-5xl font-bold text-brand-green mb-2">95%</div>
+                    <div class="text-white/80">Satisfação dos Clientes</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-4xl sm:text-5xl font-bold text-brand-green mb-2">24/7</div>
+                    <div class="text-white/80">Funcionamento Automático</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-16 sm:py-20 bg-brand-light">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl sm:text-4xl font-bold text-brand-dark mb-6">
+                Seu Projeto Pode Ser o <span class="text-brand-blue">Próximo Case</span>
+            </h2>
+            
+            <p class="text-lg text-brand-dark/70 mb-8 max-w-2xl mx-auto">
+                Cada empresa tem necessidades únicas. Vamos conversar sobre como criar uma solução personalizada para seu negócio.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="https://wa.me/5519997330171?text=Olá André! Vi os cases e gostaria de discutir um projeto similar para minha empresa." 
+                   target="_blank"
+                   class="bg-brand-blue hover:bg-brand-blue/90 text-white px-8 py-4 rounded-2xl font-bold transition-all duration-300 shadow-xl hover:shadow-2xl flex items-center justify-center space-x-3">
+                    <i class="fab fa-whatsapp text-xl"></i>
+                    <span>Discutir Meu Projeto</span>
+                </a>
+                
+                <a href="contato.html" 
+                   class="border-2 border-brand-dark/20 hover:border-brand-blue text-brand-dark hover:text-brand-blue px-8 py-4 rounded-2xl font-bold transition-all duration-300 flex items-center justify-center space-x-3 hover:shadow-lg">
+                    <i class="fas fa-wpforms text-lg"></i>
+                    <span>Solicitar Orçamento</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-brand-dark text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="md:col-span-2">
+                    <div class="flex items-center space-x-3 mb-6">
+                        <div class="w-10 h-10 flex items-center justify-center">
+                            <img src="assets/images/ICONE2.png" alt="Axel Integrações" class="w-10 h-10 object-contain">
+                        </div>
+                        <div>
+                            <span class="font-bold text-xl text-white">Axel Integrações</span>
+                            <div class="text-xs text-brand-green font-medium">Automação & Integração</div>
+                        </div>
+                    </div>
+                    <p class="text-brand-light/80 leading-relaxed max-w-md mb-6">
+                        Especialista em automação de processos e integração de sistemas. Transformando a forma como sua empresa trabalha através de soluções inteligentes e personalizadas.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="https://wa.me/5519997330171" 
+                           target="_blank"
+                           class="w-10 h-10 bg-brand-green/20 rounded-lg flex items-center justify-center text-brand-green hover:bg-brand-green hover:text-brand-dark transition-all duration-300">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                        <a href="mailto:axelintegracoes@gmail.com" 
+                           class="w-10 h-10 bg-brand-light/20 rounded-lg flex items-center justify-center text-brand-light hover:bg-brand-light hover:text-brand-dark transition-all duration-300">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="font-bold text-lg mb-6 text-brand-green">Navegação</h3>
+                    <ul class="space-y-3 text-brand-light/80">
+                        <li><a href="index.html" class="hover:text-brand-green transition-colors">Início</a></li>
+                        <li><a href="sobre.html" class="hover:text-brand-green transition-colors">Sobre</a></li>
+                        <li><a href="projetos.html" class="hover:text-brand-green transition-colors">Projetos</a></li>
+                        <li><a href="contato.html" class="hover:text-brand-green transition-colors">Contato</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="font-bold text-lg mb-6 text-brand-blue">Serviços</h3>
+                    <ul class="space-y-3 text-brand-light/80">
+                        <li>Automação de Processos</li>
+                        <li>Integração de Sistemas</li>
+                        <li>WhatsApp Business</li>
+                        <li>Soluções Personalizadas</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-brand-light/10 mt-12 pt-8">
+                <div class="text-center text-brand-light/60 text-sm">
+                    &copy; 2025 Axel Integrações. Todos os direitos reservados.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile Menu Toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const icon = mobileMenuBtn.querySelector('i');
+            
+            mobileMenuBtn.addEventListener('click', function() {
+                mobileMenu.classList.toggle('active');
+                icon.classList.toggle('fa-bars');
+                icon.classList.toggle('fa-times');
+            });
+            
+            // Close mobile menu when clicking on links
+            document.querySelectorAll('#mobile-menu a').forEach(link => {
+                link.addEventListener('click', function() {
+                    mobileMenu.classList.remove('active');
+                    icon.classList.add('fa-bars');
+                    icon.classList.remove('fa-times');
+                });
+            });
+            
+            // Fade-in animation on scroll
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, observerOptions);
+            
+            // Observe all elements with fade-in class
+            document.querySelectorAll('.fade-in').forEach(el => {
+                observer.observe(el);
+            });
+        });
+    </script>
+</body>
+</html>
