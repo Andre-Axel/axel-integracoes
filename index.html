@@ -14,7 +14,8 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-        
+    
+    <!-- Sistema de Animações -->
     <link rel="stylesheet" href="assets/css/animations.css">
     
     <!-- Tailwind Config -->
@@ -35,7 +36,7 @@
             }
         }
     </script>
-    <script src="assets/js/animations.js"></script>
+    
     <style>
         /* CSS Mínimo e Limpo */
         * {
@@ -44,27 +45,6 @@
         
         html {
             scroll-behavior: smooth;
-        }
-        
-        /* Animações sutis */
-        .fade-in {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: all 0.6s ease;
-        }
-        
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
-        .card-hover {
-            transition: all 0.3s ease;
-        }
-        
-        .card-hover:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 20px 25px -5px rgba(47, 65, 79, 0.1);
         }
         
         /* Navegação ativa */
@@ -97,7 +77,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16 sm:h-20">
                 <!-- Logo -->
-                <div class="flex items-center space-x-3">
+                <div class="flex items-center space-x-3 scroll-animate fade-right" data-delay="100">
                     <div class="w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center">
                         <img src="assets/images/ICONE2.png" alt="Axel Integrações" class="w-full h-full object-contain">
                     </div>
@@ -108,7 +88,7 @@
                 </div>
                 
                 <!-- Desktop Menu -->
-                <div class="hidden md:flex items-center space-x-8">
+                <div class="hidden md:flex items-center space-x-8 scroll-animate fade-down" data-delay="200">
                     <a href="index.html" class="nav-active px-3 py-2 font-medium transition-colors">Início</a>
                     <a href="sobre.html" class="text-brand-dark/80 hover:text-brand-blue px-3 py-2 font-medium transition-colors">Sobre</a>
                     <a href="projetos.html" class="text-brand-dark/80 hover:text-brand-blue px-3 py-2 font-medium transition-colors">Projetos</a>
@@ -119,7 +99,7 @@
                 <div class="flex items-center space-x-4">
                     <a href="https://wa.me/5519997330171?text=Olá! Gostaria de saber mais sobre automação de processos." 
                        target="_blank" 
-                       class="bg-brand-blue hover:bg-brand-blue/90 text-white px-4 py-2 sm:px-6 sm:py-3 rounded-xl font-semibold transition-all duration-300 flex items-center space-x-2 shadow-lg hover:shadow-xl">
+                       class="bg-brand-blue hover:bg-brand-blue/90 text-white px-4 py-2 sm:px-6 sm:py-3 rounded-xl font-semibold transition-all duration-300 flex items-center space-x-2 shadow-lg hover:shadow-xl button-animate pulse scroll-animate scale-in" data-delay="300">
                         <i class="fab fa-whatsapp text-lg"></i>
                         <span class="hidden sm:inline">Conversar</span>
                     </a>
@@ -144,47 +124,47 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="gradient-hero text-white pt-20 pb-16 sm:pt-24 sm:pb-20 lg:pt-32 lg:pb-24">
+    <section class="gradient-hero text-white pt-20 pb-16 sm:pt-24 sm:pb-20 lg:pt-32 lg:pb-24 hero-background">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
                 <!-- Hero Content -->
                 <div class="text-center lg:text-left">
-                    <div class="inline-flex items-center bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 text-sm font-medium border border-white/20 mb-6">
+                    <div class="inline-flex items-center bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 text-sm font-medium border border-white/20 mb-6 scroll-animate fade-up" data-delay="200">
                         <div class="w-2 h-2 bg-brand-green rounded-full mr-2 animate-pulse"></div>
                         Transformando processos empresariais
                     </div>
                     
-                    <h1 class="text-3xl sm:text-4xl lg:text-6xl font-bold leading-tight mb-6">
+                    <h1 class="text-3xl sm:text-4xl lg:text-6xl font-bold leading-tight mb-6 scroll-animate fade-up hero-title" data-delay="400">
                         Integração e<br>
                         <span class="text-brand-green">Automação</span><br>
                         Inteligente
                     </h1>
                     
-                    <p class="text-lg sm:text-xl text-white/90 leading-relaxed mb-8 max-w-2xl mx-auto lg:mx-0">
+                    <p class="text-lg sm:text-xl text-white/90 leading-relaxed mb-8 max-w-2xl mx-auto lg:mx-0 scroll-animate fade-up" data-delay="600">
                         Conectamos seus sistemas e automatizamos processos para que você foque no que realmente importa: <span class="text-brand-green font-semibold">o crescimento do seu negócio</span>.
                     </p>
                     
-                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start scroll-animate fade-up" data-delay="800">
                         <a href="projetos.html" 
-                           class="bg-brand-green hover:bg-brand-green/90 text-brand-dark px-8 py-4 rounded-xl font-semibold transition-all duration-300 text-center shadow-lg hover:shadow-xl">
+                           class="bg-brand-green hover:bg-brand-green/90 text-brand-dark px-8 py-4 rounded-xl font-semibold transition-all duration-300 text-center shadow-lg hover:shadow-xl button-animate">
                             Ver Cases de Sucesso
                         </a>
                         <a href="contato.html"
-                           class="border-2 border-white/30 hover:border-white text-white hover:bg-white hover:text-brand-dark px-8 py-4 rounded-xl font-semibold transition-all duration-300 text-center backdrop-blur-sm">
+                           class="border-2 border-white/30 hover:border-white text-white hover:bg-white hover:text-brand-dark px-8 py-4 rounded-xl font-semibold transition-all duration-300 text-center backdrop-blur-sm button-animate">
                             Solicitar Orçamento
                         </a>
                     </div>
                 </div>
                 
                 <!-- Hero Visual -->
-                <div class="hidden lg:block">
-                    <div class="bg-white/10 backdrop-blur-sm rounded-3xl p-8 border border-white/20">
+                <div class="hidden lg:block scroll-animate scale-in parallax-slow" data-delay="1000">
+                    <div class="bg-white/10 backdrop-blur-sm rounded-3xl p-8 border border-white/20 float">
                         <div class="text-center mb-6">
                             <div class="text-lg font-semibold text-brand-green">Sistema em Tempo Real</div>
                         </div>
                         
-                        <div class="space-y-4">
-                            <div class="flex items-center justify-between p-4 bg-white/10 rounded-xl">
+                        <div class="space-y-4" data-stagger-group data-stagger-delay="100">
+                            <div class="flex items-center justify-between p-4 bg-white/10 rounded-xl scroll-animate fade-left stagger-item">
                                 <div class="flex items-center space-x-3">
                                     <div class="w-3 h-3 bg-brand-green rounded-full animate-pulse"></div>
                                     <span class="text-sm">CRM Integrado</span>
@@ -192,7 +172,7 @@
                                 <div class="text-brand-green text-sm font-medium">Online</div>
                             </div>
                             
-                            <div class="flex items-center justify-between p-4 bg-white/10 rounded-xl">
+                            <div class="flex items-center justify-between p-4 bg-white/10 rounded-xl scroll-animate fade-left stagger-item">
                                 <div class="flex items-center space-x-3">
                                     <div class="w-3 h-3 bg-brand-blue rounded-full animate-pulse"></div>
                                     <span class="text-sm">WhatsApp API</span>
@@ -200,7 +180,7 @@
                                 <div class="text-brand-green text-sm font-medium">Ativo</div>
                             </div>
                             
-                            <div class="flex items-center justify-between p-4 bg-white/10 rounded-xl">
+                            <div class="flex items-center justify-between p-4 bg-white/10 rounded-xl scroll-animate fade-left stagger-item">
                                 <div class="flex items-center space-x-3">
                                     <div class="w-3 h-3 bg-yellow-400 rounded-full animate-pulse"></div>
                                     <span class="text-sm">Automação</span>
@@ -218,21 +198,21 @@
     <section class="py-16 sm:py-20 lg:py-24 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <div class="inline-flex items-center bg-brand-green/20 text-brand-dark rounded-full px-4 py-2 text-sm font-medium mb-6">
+                <div class="inline-flex items-center bg-brand-green/20 text-brand-dark rounded-full px-4 py-2 text-sm font-medium mb-6 scroll-animate fade-up">
                     Nossa especialidade
                 </div>
-                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-brand-dark mb-6">
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-brand-dark mb-6 scroll-animate fade-up" data-delay="200">
                     Como <span class="text-brand-blue">Transformamos</span> Seu Negócio
                 </h2>
-                <p class="text-lg sm:text-xl text-brand-dark/70 max-w-3xl mx-auto">
+                <p class="text-lg sm:text-xl text-brand-dark/70 max-w-3xl mx-auto scroll-animate fade-up" data-delay="400">
                     Conectamos e automatizamos sistemas como WhatsApp, CRMs, ERPs, ferramentas de assinatura digital e muito mais.
                 </p>
             </div>
             
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" data-stagger-group data-stagger-delay="200">
                 <!-- Serviço 1 -->
-                <div class="card-hover bg-gradient-to-br from-brand-blue/10 to-brand-blue/20 rounded-2xl p-8 border border-brand-blue/20">
-                    <div class="w-16 h-16 bg-brand-blue rounded-2xl flex items-center justify-center mb-6">
+                <div class="card-animate bg-gradient-to-br from-brand-blue/10 to-brand-blue/20 rounded-2xl p-8 border border-brand-blue/20 scroll-animate fade-up stagger-item">
+                    <div class="w-16 h-16 bg-brand-blue rounded-2xl flex items-center justify-center mb-6 bounce-in">
                         <i class="fas fa-robot text-2xl text-white"></i>
                     </div>
                     <h3 class="text-xl font-bold text-brand-dark mb-4">Automação de Processos</h3>
@@ -240,13 +220,13 @@
                         Eliminamos tarefas repetitivas criando fluxos inteligentes que funcionam 24/7.
                     </p>
                     <div class="text-sm text-brand-blue font-medium">
-                        → Economia de até 80% do tempo
+                        → Economia de até <span class="counter" data-target="80" data-suffix="%">80%</span> do tempo
                     </div>
                 </div>
                 
                 <!-- Serviço 2 -->
-                <div class="card-hover bg-gradient-to-br from-brand-green/10 to-brand-green/20 rounded-2xl p-8 border border-brand-green/20">
-                    <div class="w-16 h-16 bg-brand-green rounded-2xl flex items-center justify-center mb-6">
+                <div class="card-animate bg-gradient-to-br from-brand-green/10 to-brand-green/20 rounded-2xl p-8 border border-brand-green/20 scroll-animate fade-up stagger-item">
+                    <div class="w-16 h-16 bg-brand-green rounded-2xl flex items-center justify-center mb-6 bounce-in">
                         <i class="fas fa-link text-2xl text-brand-dark"></i>
                     </div>
                     <h3 class="text-xl font-bold text-brand-dark mb-4">Integração de Sistemas</h3>
@@ -259,8 +239,8 @@
                 </div>
                 
                 <!-- Serviço 3 -->
-                <div class="card-hover bg-gradient-to-br from-purple-100 to-purple-200 rounded-2xl p-8 border border-purple-200">
-                    <div class="w-16 h-16 bg-purple-600 rounded-2xl flex items-center justify-center mb-6">
+                <div class="card-animate bg-gradient-to-br from-purple-100 to-purple-200 rounded-2xl p-8 border border-purple-200 scroll-animate fade-up stagger-item">
+                    <div class="w-16 h-16 bg-purple-600 rounded-2xl flex items-center justify-center mb-6 bounce-in">
                         <i class="fas fa-bell text-2xl text-white"></i>
                     </div>
                     <h3 class="text-xl font-bold text-brand-dark mb-4">Notificações Inteligentes</h3>
@@ -268,7 +248,7 @@
                         Mantenha clientes sempre informados com comunicação automática e personalizada.
                     </p>
                     <div class="text-sm text-purple-600 font-medium">
-                        → Satisfação do cliente 95%+
+                        → Satisfação do cliente <span class="counter" data-target="95" data-suffix="%">95%</span>+
                     </div>
                 </div>
             </div>
@@ -279,23 +259,23 @@
     <section class="py-16 sm:py-20 lg:py-24 bg-brand-light/50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <div class="inline-flex items-center bg-brand-blue/20 text-brand-dark rounded-full px-4 py-2 text-sm font-medium mb-6">
+                <div class="inline-flex items-center bg-brand-blue/20 text-brand-dark rounded-full px-4 py-2 text-sm font-medium mb-6 scroll-animate fade-up">
                     Cases de sucesso
                 </div>
-                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-brand-dark mb-6">
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-brand-dark mb-6 scroll-animate fade-up" data-delay="200">
                     Projetos que <span class="text-brand-blue">Transformaram</span> Negócios
                 </h2>
-                <p class="text-lg sm:text-xl text-brand-dark/70 max-w-3xl mx-auto">
+                <p class="text-lg sm:text-xl text-brand-dark/70 max-w-3xl mx-auto scroll-animate fade-up" data-delay="400">
                     Veja como nossa automação revolucionou a operação de empresas reais
                 </p>
             </div>
             
             <div class="grid lg:grid-cols-2 gap-8 mb-12">
                 <!-- Case 1 -->
-                <div class="card-hover bg-white rounded-3xl overflow-hidden shadow-xl border border-brand-green/10">
+                <div class="card-animate bg-white rounded-3xl overflow-hidden shadow-xl border border-brand-green/10 scroll-animate fade-right" data-delay="200">
                     <div class="bg-gradient-to-br from-brand-blue to-brand-dark p-8 text-white">
                         <div class="flex items-center space-x-4 mb-6">
-                            <div class="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center">
+                            <div class="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center bounce-in">
                                 <i class="fab fa-whatsapp text-xl"></i>
                             </div>
                             <div>
@@ -304,16 +284,16 @@
                             </div>
                         </div>
                         
-                        <div class="grid grid-cols-3 gap-4 text-center">
-                            <div>
-                                <div class="text-2xl font-bold text-brand-green">70%</div>
+                        <div class="grid grid-cols-3 gap-4 text-center" data-stagger-group data-stagger-delay="100">
+                            <div class="scroll-animate scale-in stagger-item">
+                                <div class="text-2xl font-bold text-brand-green counter" data-target="70" data-suffix="%">70%</div>
                                 <div class="text-xs opacity-80">Menos Trabalho</div>
                             </div>
-                            <div>
-                                <div class="text-2xl font-bold text-brand-green">95%</div>
+                            <div class="scroll-animate scale-in stagger-item">
+                                <div class="text-2xl font-bold text-brand-green counter" data-target="95" data-suffix="%">95%</div>
                                 <div class="text-xs opacity-80">Satisfação</div>
                             </div>
-                            <div>
+                            <div class="scroll-animate scale-in stagger-item">
                                 <div class="text-2xl font-bold text-brand-green">24/7</div>
                                 <div class="text-xs opacity-80">Automático</div>
                             </div>
@@ -324,19 +304,19 @@
                         <p class="text-brand-dark/70 mb-4">
                             Sistema automático que envia mensagens WhatsApp sempre que status muda: "Em manutenção", "Pronto para retirada", etc.
                         </p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="bg-brand-blue/20 text-brand-blue px-3 py-1 rounded-full text-sm font-medium">WhatsApp API</span>
-                            <span class="bg-brand-blue/20 text-brand-blue px-3 py-1 rounded-full text-sm font-medium">MySQL</span>
-                            <span class="bg-brand-blue/20 text-brand-blue px-3 py-1 rounded-full text-sm font-medium">Automação</span>
+                        <div class="flex flex-wrap gap-2" data-stagger-group data-stagger-delay="50">
+                            <span class="bg-brand-blue/20 text-brand-blue px-3 py-1 rounded-full text-sm font-medium scroll-animate fade-up stagger-item">WhatsApp API</span>
+                            <span class="bg-brand-blue/20 text-brand-blue px-3 py-1 rounded-full text-sm font-medium scroll-animate fade-up stagger-item">MySQL</span>
+                            <span class="bg-brand-blue/20 text-brand-blue px-3 py-1 rounded-full text-sm font-medium scroll-animate fade-up stagger-item">Automação</span>
                         </div>
                     </div>
                 </div>
                 
                 <!-- Case 2 -->
-                <div class="card-hover bg-white rounded-3xl overflow-hidden shadow-xl border border-brand-green/10">
+                <div class="card-animate bg-white rounded-3xl overflow-hidden shadow-xl border border-brand-green/10 scroll-animate fade-left" data-delay="400">
                     <div class="bg-gradient-to-br from-brand-green to-brand-blue p-8 text-white">
                         <div class="flex items-center space-x-4 mb-6">
-                            <div class="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center">
+                            <div class="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center bounce-in">
                                 <i class="fas fa-home text-xl"></i>
                             </div>
                             <div>
@@ -345,17 +325,17 @@
                             </div>
                         </div>
                         
-                        <div class="grid grid-cols-3 gap-4 text-center">
-                            <div>
-                                <div class="text-2xl font-bold text-brand-light">85%</div>
+                        <div class="grid grid-cols-3 gap-4 text-center" data-stagger-group data-stagger-delay="100">
+                            <div class="scroll-animate scale-in stagger-item">
+                                <div class="text-2xl font-bold text-brand-light counter" data-target="85" data-suffix="%">85%</div>
                                 <div class="text-xs opacity-80">Mais Conversões</div>
                             </div>
-                            <div>
+                            <div class="scroll-animate scale-in stagger-item">
                                 <div class="text-2xl font-bold text-brand-light">30s</div>
                                 <div class="text-xs opacity-80">Tempo Resposta</div>
                             </div>
-                            <div>
-                                <div class="text-2xl font-bold text-brand-light">100%</div>
+                            <div class="scroll-animate scale-in stagger-item">
+                                <div class="text-2xl font-bold text-brand-light counter" data-target="100" data-suffix="%">100%</div>
                                 <div class="text-xs opacity-80">Leads Capturados</div>
                             </div>
                         </div>
@@ -365,18 +345,18 @@
                         <p class="text-brand-dark/70 mb-4">
                             Automação que detecta leads, cria cadastro no CRM e envia mensagem WhatsApp instantaneamente.
                         </p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="bg-brand-green/20 text-brand-green px-3 py-1 rounded-full text-sm font-medium">WordPress</span>
-                            <span class="bg-brand-green/20 text-brand-green px-3 py-1 rounded-full text-sm font-medium">CRM</span>
-                            <span class="bg-brand-green/20 text-brand-green px-3 py-1 rounded-full text-sm font-medium">WhatsApp</span>
+                        <div class="flex flex-wrap gap-2" data-stagger-group data-stagger-delay="50">
+                            <span class="bg-brand-green/20 text-brand-green px-3 py-1 rounded-full text-sm font-medium scroll-animate fade-up stagger-item">WordPress</span>
+                            <span class="bg-brand-green/20 text-brand-green px-3 py-1 rounded-full text-sm font-medium scroll-animate fade-up stagger-item">CRM</span>
+                            <span class="bg-brand-green/20 text-brand-green px-3 py-1 rounded-full text-sm font-medium scroll-animate fade-up stagger-item">WhatsApp</span>
                         </div>
                     </div>
                 </div>
             </div>
             
-            <div class="text-center">
+            <div class="text-center scroll-animate fade-up" data-delay="600">
                 <a href="projetos.html" 
-                   class="inline-flex items-center bg-brand-blue hover:bg-brand-blue/90 text-white px-8 py-4 rounded-xl font-semibold transition-all duration-300 shadow-lg hover:shadow-xl">
+                   class="inline-flex items-center bg-brand-blue hover:bg-brand-blue/90 text-white px-8 py-4 rounded-xl font-semibold transition-all duration-300 shadow-lg hover:shadow-xl button-animate">
                     <i class="fas fa-rocket mr-3"></i>
                     Ver Todos os Projetos
                 </a>
@@ -387,55 +367,55 @@
     <!-- CTA Final -->
     <section class="py-16 sm:py-20 lg:py-24 bg-white">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <div class="inline-flex items-center bg-brand-green/20 text-brand-dark rounded-full px-4 py-2 text-sm font-medium mb-6">
+            <div class="inline-flex items-center bg-brand-green/20 text-brand-dark rounded-full px-4 py-2 text-sm font-medium mb-6 scroll-animate fade-up">
                 Transforme seu negócio hoje
             </div>
             
-            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-brand-dark leading-tight mb-6">
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-brand-dark leading-tight mb-6 scroll-animate fade-up" data-delay="200">
                 Você foca no que importa.<br>
                 <span class="text-brand-blue">Nós cuidamos da automação</span>
             </h2>
             
-            <p class="text-lg sm:text-xl text-brand-dark/70 leading-relaxed max-w-3xl mx-auto mb-8">
+            <p class="text-lg sm:text-xl text-brand-dark/70 leading-relaxed max-w-3xl mx-auto mb-8 scroll-animate fade-up" data-delay="400">
                 Pare de perder tempo com tarefas manuais. Vamos conversar sobre como 
                 <strong class="text-brand-blue">automatizar seus processos</strong> e 
                 <strong class="text-brand-blue">multiplicar seus resultados</strong>.
             </p>
             
-            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <div class="flex flex-col sm:flex-row gap-4 justify-center scroll-animate fade-up" data-delay="600">
                 <a href="https://wa.me/5519997330171?text=Olá! Quero uma consultoria gratuita sobre automação para minha empresa." 
                    target="_blank"
-                   class="bg-brand-blue hover:bg-brand-blue/90 text-white px-10 py-5 rounded-2xl font-bold text-lg transition-all duration-300 shadow-xl hover:shadow-2xl flex items-center justify-center space-x-3">
+                   class="bg-brand-blue hover:bg-brand-blue/90 text-white px-10 py-5 rounded-2xl font-bold text-lg transition-all duration-300 shadow-xl hover:shadow-2xl flex items-center justify-center space-x-3 button-animate glow">
                     <i class="fab fa-whatsapp text-2xl"></i>
                     <span>Consultoria Gratuita</span>
                 </a>
                 
                 <a href="contato.html" 
-                   class="border-2 border-brand-dark/20 hover:border-brand-blue text-brand-dark hover:text-brand-blue px-10 py-5 rounded-2xl font-bold text-lg transition-all duration-300 flex items-center justify-center space-x-3 hover:shadow-lg">
+                   class="border-2 border-brand-dark/20 hover:border-brand-blue text-brand-dark hover:text-brand-blue px-10 py-5 rounded-2xl font-bold text-lg transition-all duration-300 flex items-center justify-center space-x-3 hover:shadow-lg button-animate">
                     <i class="fas fa-wpforms text-xl"></i>
                     <span>Solicitar Orçamento</span>
                 </a>
             </div>
             
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
-                <div class="text-center">
-                    <div class="w-16 h-16 bg-brand-green/20 rounded-2xl flex items-center justify-center mx-auto mb-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16" data-stagger-group data-stagger-delay="200">
+                <div class="text-center scroll-animate fade-up stagger-item">
+                    <div class="w-16 h-16 bg-brand-green/20 rounded-2xl flex items-center justify-center mx-auto mb-4 bounce-in">
                         <i class="fas fa-phone text-2xl text-brand-green"></i>
                     </div>
                     <h3 class="font-bold text-brand-dark mb-2">Resposta Rápida</h3>
                     <p class="text-brand-dark/70">Retornamos em até 2 horas</p>
                 </div>
                 
-                <div class="text-center">
-                    <div class="w-16 h-16 bg-brand-blue/20 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                <div class="text-center scroll-animate fade-up stagger-item">
+                    <div class="w-16 h-16 bg-brand-blue/20 rounded-2xl flex items-center justify-center mx-auto mb-4 bounce-in">
                         <i class="fas fa-handshake text-2xl text-brand-blue"></i>
                     </div>
                     <h3 class="font-bold text-brand-dark mb-2">Consultoria Gratuita</h3>
                     <p class="text-brand-dark/70">Primeira análise sem custo</p>
                 </div>
                 
-                <div class="text-center">
-                    <div class="w-16 h-16 bg-yellow-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                <div class="text-center scroll-animate fade-up stagger-item">
+                    <div class="w-16 h-16 bg-yellow-100 rounded-2xl flex items-center justify-center mx-auto mb-4 bounce-in">
                         <i class="fas fa-trophy text-2xl text-yellow-600"></i>
                     </div>
                     <h3 class="font-bold text-brand-dark mb-2">Resultados Garantidos</h3>
@@ -449,7 +429,7 @@
     <footer class="bg-brand-dark text-white py-12">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid md:grid-cols-4 gap-8">
-                <div class="md:col-span-2">
+                <div class="md:col-span-2 scroll-animate fade-right">
                     <div class="flex items-center space-x-3 mb-6">
                         <div class="w-10 h-10 flex items-center justify-center">
                             <img src="assets/images/ICONE2.png" alt="Axel Integrações" class="w-10 h-10 object-contain">
@@ -462,41 +442,41 @@
                     <p class="text-brand-light/80 leading-relaxed max-w-md mb-6">
                         Especialista em automação de processos e integração de sistemas. Transformando a forma como sua empresa trabalha através de soluções inteligentes e personalizadas.
                     </p>
-                    <div class="flex space-x-4">
+                    <div class="flex space-x-4" data-stagger-group data-stagger-delay="100">
                         <a href="https://wa.me/5519997330171" 
                            target="_blank"
-                           class="w-10 h-10 bg-brand-green/20 rounded-lg flex items-center justify-center text-brand-green hover:bg-brand-green hover:text-brand-dark transition-all duration-300">
+                           class="w-10 h-10 bg-brand-green/20 rounded-lg flex items-center justify-center text-brand-green hover:bg-brand-green hover:text-brand-dark transition-all duration-300 scroll-animate scale-in stagger-item">
                             <i class="fab fa-whatsapp"></i>
                         </a>
                         <a href="mailto:axelintegracoes@gmail.com" 
-                           class="w-10 h-10 bg-brand-light/20 rounded-lg flex items-center justify-center text-brand-light hover:bg-brand-light hover:text-brand-dark transition-all duration-300">
+                           class="w-10 h-10 bg-brand-light/20 rounded-lg flex items-center justify-center text-brand-light hover:bg-brand-light hover:text-brand-dark transition-all duration-300 scroll-animate scale-in stagger-item">
                             <i class="fas fa-envelope"></i>
                         </a>
                     </div>
                 </div>
                 
-                <div>
+                <div class="scroll-animate fade-up" data-delay="200">
                     <h3 class="font-bold text-lg mb-6 text-brand-green">Navegação</h3>
-                    <ul class="space-y-3 text-brand-light/80">
-                        <li><a href="index.html" class="hover:text-brand-green transition-colors">Início</a></li>
-                        <li><a href="sobre.html" class="hover:text-brand-green transition-colors">Sobre</a></li>
-                        <li><a href="projetos.html" class="hover:text-brand-green transition-colors">Projetos</a></li>
-                        <li><a href="contato.html" class="hover:text-brand-green transition-colors">Contato</a></li>
+                    <ul class="space-y-3 text-brand-light/80" data-stagger-group data-stagger-delay="100">
+                        <li class="scroll-animate fade-left stagger-item"><a href="index.html" class="hover:text-brand-green transition-colors">Início</a></li>
+                        <li class="scroll-animate fade-left stagger-item"><a href="sobre.html" class="hover:text-brand-green transition-colors">Sobre</a></li>
+                        <li class="scroll-animate fade-left stagger-item"><a href="projetos.html" class="hover:text-brand-green transition-colors">Projetos</a></li>
+                        <li class="scroll-animate fade-left stagger-item"><a href="contato.html" class="hover:text-brand-green transition-colors">Contato</a></li>
                     </ul>
                 </div>
                 
-                <div>
+                <div class="scroll-animate fade-up" data-delay="400">
                     <h3 class="font-bold text-lg mb-6 text-brand-blue">Serviços</h3>
-                    <ul class="space-y-3 text-brand-light/80">
-                        <li>Automação de Processos</li>
-                        <li>Integração de Sistemas</li>
-                        <li>Notificações Automáticas</li>
-                        <li>Soluções Personalizadas</li>
+                    <ul class="space-y-3 text-brand-light/80" data-stagger-group data-stagger-delay="100">
+                        <li class="scroll-animate fade-left stagger-item">Automação de Processos</li>
+                        <li class="scroll-animate fade-left stagger-item">Integração de Sistemas</li>
+                        <li class="scroll-animate fade-left stagger-item">Notificações Automáticas</li>
+                        <li class="scroll-animate fade-left stagger-item">Soluções Personalizadas</li>
                     </ul>
                 </div>
             </div>
             
-            <div class="border-t border-brand-light/10 mt-12 pt-8">
+            <div class="border-t border-brand-light/10 mt-12 pt-8 scroll-animate fade-up" data-delay="600">
                 <div class="text-center text-brand-light/60 text-sm">
                     &copy; 2025 Axel Integrações. Todos os direitos reservados.
                 </div>
@@ -504,7 +484,10 @@
         </div>
     </footer>
 
-    <!-- JavaScript Mínimo -->
+    <!-- Sistema de Animações JavaScript -->
+    <script src="assets/js/animations.js"></script>
+    
+    <!-- JavaScript Específico da Página -->
     <script>
         // Mobile Menu Toggle
         document.addEventListener('DOMContentLoaded', function() {
@@ -525,25 +508,6 @@
                     icon.classList.add('fa-bars');
                     icon.classList.remove('fa-times');
                 });
-            });
-            
-            // Fade-in animation on scroll
-            const observerOptions = {
-                threshold: 0.1,
-                rootMargin: '0px 0px -50px 0px'
-            };
-            
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
-                    }
-                });
-            }, observerOptions);
-            
-            // Observe all elements with fade-in class
-            document.querySelectorAll('.fade-in').forEach(el => {
-                observer.observe(el);
             });
             
             // Smooth scroll for anchor links
