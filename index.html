@@ -6,139 +6,164 @@
     <title>Axel Integrações - Automação e Integração de Sistemas</title>
     <meta name="description" content="Especialista em automação de processos e integração de sistemas via APIs. Ajudo empresas a otimizar operações e aumentar produtividade.">
     
-    <!-- Tailwind CSS2 -->
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/ICONE2.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/ICONE2.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/ICONE2.png">
+    
+    <!-- External Libraries -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
-    <!-- Font Awesome para ícones -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
-    <style>
-        * {
-            font-family: 'Inter', sans-serif;
-        }
-        
-        .gradient-bg {
-            background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
-        }
-        
-        .gradient-text {
-            background: linear-gradient(135deg, #1e40af, #3b82f6);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        
-        .card-hover {
-            transition: all 0.3s ease;
-        }
-        
-        .card-hover:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-        }
-        
-        .floating-animation {
-            animation: floating 3s ease-in-out infinite;
-        }
-        
-        @keyframes floating {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
-        }
-        
-        .scroll-smooth {
-            scroll-behavior: smooth;
-        }
-        
-        .section-padding {
-            padding: 5rem 0;
-        }
-        
-        @media (max-width: 768px) {
-            .section-padding {
-                padding: 3rem 0;
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'brand-dark': '#2F414F',
+                        'brand-blue': '#3894A3', 
+                        'brand-light': '#F1F1EF',
+                        'brand-green': '#C7DAD4'
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'system-ui', 'sans-serif']
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.6s ease-out',
+                        'slide-up': 'slideUp 0.6s ease-out',
+                        'scale-in': 'scaleIn 0.4s ease-out'
+                    }
+                }
             }
         }
-    </style>
+    </script>
+    
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
 </head>
-<body class="bg-gray-50 scroll-smooth">
+<body class="bg-brand-light font-sans antialiased">
     <!-- Header/Navigation -->
-    <nav class="bg-white shadow-sm fixed w-full top-0 z-50">
+    <nav class="bg-white/95 backdrop-blur-lg shadow-sm fixed w-full top-0 z-50 border-b border-brand-green/20" id="navbar">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16">
-                <div class="flex items-center space-x-2">
-                    <div class="w-8 h-8 bg-blue-600 rounded flex items-center justify-center">
-                        <span class="text-white font-bold text-lg">A</span>
+            <div class="flex justify-between items-center h-20">
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 flex items-center justify-center">
+                        <img src="assets/images/ICONE2.png" alt="Axel Integrações" class="w-10 h-10 object-contain logo-img">
                     </div>
-                    <span class="font-semibold text-gray-900">Axel Integrações</span>
+                    <div>
+                        <span class="font-bold text-xl text-brand-dark">Axel Integrações</span>
+                        <br>
+                        <div class="text-xs text-brand-blue font-medium">Automação & Integração</div>
+                    </div>
                 </div>
                 
-                <div class="hidden md:flex space-x-8">
-                    <a href="#sobre" class="text-gray-600 hover:text-blue-600 transition-colors">Sobre</a>
-                    <a href="#servicos" class="text-gray-600 hover:text-blue-600 transition-colors">Serviços</a>
-                    <a href="#projetos" class="text-gray-600 hover:text-blue-600 transition-colors">Projetos</a>
-                    <a href="#plataformas" class="text-gray-600 hover:text-blue-600 transition-colors">Plataformas</a>
+                <div class="hidden lg:flex items-center space-x-10" id="nav-menu">
+                    <a href="#sobre" class="nav-link text-brand-dark/80 hover:text-brand-blue transition-all duration-300 font-medium">Sobre</a>
+                    <a href="#servicos" class="nav-link text-brand-dark/80 hover:text-brand-blue transition-all duration-300 font-medium">Serviços</a>
+                    <a href="#projetos" class="nav-link text-brand-dark/80 hover:text-brand-blue transition-all duration-300 font-medium">Cases</a>
+                    <a href="#plataformas" class="nav-link text-brand-dark/80 hover:text-brand-blue transition-all duration-300 font-medium">Plataformas</a>
                 </div>
                 
-                <a href="https://wa.me/5519999999999?text=Olá! Gostaria de saber mais sobre automação de processos." 
-                   target="_blank" 
-                   class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg transition-colors flex items-center space-x-2">
-                    <i class="fab fa-whatsapp"></i>
-                    <span>WhatsApp</span>
-                </a>
+                <div class="flex items-center space-x-4">
+                    <a href="https://wa.me/5519997330171?text=Olá! Gostaria de saber mais sobre automação de processos." 
+                       target="_blank" 
+                       class="bg-brand-blue hover:bg-brand-blue/90 text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300 flex items-center space-x-2 shadow-lg hover:shadow-xl">
+                        <i class="fab fa-whatsapp text-lg"></i>
+                        <span>Conversar</span>
+                    </a>
+                    
+                    <!-- Mobile Menu Button -->
+                    <button class="lg:hidden p-2 text-brand-dark" id="mobile-menu-btn">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div class="lg:hidden hidden bg-white border-t border-brand-green/20" id="mobile-menu">
+            <div class="px-4 py-6 space-y-4">
+                <a href="#sobre" class="block text-brand-dark hover:text-brand-blue transition-colors font-medium">Sobre</a>
+                <a href="#servicos" class="block text-brand-dark hover:text-brand-blue transition-colors font-medium">Serviços</a>
+                <a href="#projetos" class="block text-brand-dark hover:text-brand-blue transition-colors font-medium">Cases</a>
+                <a href="#plataformas" class="block text-brand-dark hover:text-brand-blue transition-colors font-medium">Plataformas</a>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section class="gradient-bg text-white section-padding mt-16">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid lg:grid-cols-2 gap-12 items-center">
-                <div>
-                    <h1 class="text-4xl lg:text-6xl font-bold mb-6 leading-tight">
-                        Integração e <br>
-                        <span class="text-blue-200">Automação</span><br>
-                        de Sistemas
-                    </h1>
-                    <p class="text-xl mb-8 text-blue-100">
-                        Você foca no que importa. Eu cuido do resto.
-                    </p>
-                    <p class="text-lg mb-8 text-blue-50 leading-relaxed">
-                        Ajudo empresas a otimizar operações, reduzir erros e aumentar a produtividade através de soluções personalizadas que conectam plataformas diversas.
-                    </p>
+    <section class="relative bg-gradient-to-br from-brand-dark via-brand-dark to-brand-blue text-white overflow-hidden" id="hero">
+        <div class="absolute inset-0 bg-gradient-to-br from-brand-dark/90 to-brand-blue/90"></div>
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute top-20 left-10 w-32 h-32 bg-brand-blue rounded-full blur-3xl"></div>
+            <div class="absolute bottom-20 right-10 w-40 h-40 bg-brand-green rounded-full blur-3xl"></div>
+        </div>
+        
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 lg:py-40">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div class="hero-content space-y-8">
+                    <div class="space-y-6">
+                        <div class="inline-flex items-center bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 text-sm font-medium border border-white/20">
+                            <div class="w-2 h-2 bg-brand-green rounded-full mr-2 animate-pulse"></div>
+                            Transformando processos empresariais
+                        </div>
+                        
+                       <h1 class="text-4xl sm:text-5xl lg:text-7xl font-bold leading-tight">Integração e
+<br>Automação
+<span class="text-brand-blue">Inteligente</span>
+                        </h1>
+                        
+                        <p class="text-xl lg:text-2xl text-white/90 leading-relaxed max-w-2xl">
+                            Conectamos seus sistemas e automatizamos processos para que você foque no que realmente importa: <span class="text-brand-green font-semibold">o crescimento do seu negócio</span>.
+                        </p>
+                    </div>
                     
                     <div class="flex flex-col sm:flex-row gap-4">
                         <a href="#projetos" 
-                           class="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors text-center">
-                            Ver Projetos
+                           class="bg-brand-green hover:bg-brand-green/90 text-brand-dark px-8 py-4 rounded-xl font-semibold transition-all duration-300 text-center shadow-lg hover:shadow-xl hover:scale-105">
+                            Ver Cases de Sucesso
                         </a>
-                        <a href="https://wa.me/5519999999999?text=Olá! Gostaria de saber mais sobre automação de processos." 
+                        <a href="https://wa.me/5519997330171?text=Olá! Gostaria de uma consultoria sobre automação." 
                            target="_blank"
-                           class="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors text-center flex items-center justify-center space-x-2">
-                            <i class="fab fa-whatsapp"></i>
-                            <span>Falar no WhatsApp</span>
+                           class="border-2 border-white/30 hover:border-white text-white hover:bg-white hover:text-brand-dark px-8 py-4 rounded-xl font-semibold transition-all duration-300 text-center backdrop-blur-sm">
+                            Consultoria Gratuita
                         </a>
                     </div>
                 </div>
                 
-                <div class="hidden lg:block">
+                <div class="hidden lg:block relative">
                     <div class="floating-animation">
-                        <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
+                        <div class="bg-white/10 backdrop-blur-sm rounded-3xl p-8 border border-white/20 space-y-6">
+                            <div class="text-center mb-6">
+                                <div class="text-lg font-semibold text-brand-green">Sistema em Tempo Real</div>
+                            </div>
+                            
                             <div class="space-y-4">
-                                <div class="flex items-center space-x-3">
-                                    <div class="w-3 h-3 bg-green-400 rounded-full"></div>
-                                    <span class="text-sm">Sistema integrado com sucesso</span>
+                                <div class="flex items-center justify-between p-4 bg-white/10 rounded-xl">
+                                    <div class="flex items-center space-x-3">
+                                        <div class="w-3 h-3 bg-brand-green rounded-full animate-pulse"></div>
+                                        <span class="text-sm">CRM Integrado</span>
+                                    </div>
+                                    <div class="text-brand-green text-sm font-medium">Online</div>
                                 </div>
-                                <div class="flex items-center space-x-3">
-                                    <div class="w-3 h-3 bg-blue-400 rounded-full"></div>
-                                    <span class="text-sm">Automação em execução</span>
+                                
+                                <div class="flex items-center justify-between p-4 bg-white/10 rounded-xl">
+                                    <div class="flex items-center space-x-3">
+                                        <div class="w-3 h-3 bg-brand-blue rounded-full animate-pulse"></div>
+                                        <span class="text-sm">WhatsApp API</span>
+                                    </div>
+                                    <div class="text-brand-green text-sm font-medium">Ativo</div>
                                 </div>
-                                <div class="flex items-center space-x-3">
-                                    <div class="w-3 h-3 bg-yellow-400 rounded-full"></div>
-                                    <span class="text-sm">Notificação enviada</span>
+                                
+                                <div class="flex items-center justify-between p-4 bg-white/10 rounded-xl">
+                                    <div class="flex items-center space-x-3">
+                                        <div class="w-3 h-3 bg-yellow-400 rounded-full animate-pulse"></div>
+                                        <span class="text-sm">Automação</span>
+                                    </div>
+                                    <div class="text-white-400 text-sm font-medium">Executando</div>
                                 </div>
                             </div>
                         </div>
@@ -149,33 +174,39 @@
     </section>
 
     <!-- Sobre Section -->
-    <section id="sobre" class="section-padding bg-white">
+    <section id="sobre" class="py-24 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid lg:grid-cols-2 gap-12 items-center">
-                <div>
-                    <div class="w-64 h-64 mx-auto lg:mx-0 bg-gray-200 rounded-full overflow-hidden">
-                        <div class="w-full h-full bg-gradient-to-br from-blue-500 to-blue-700 flex items-center justify-center">
-                            <span class="text-6xl text-white font-bold">AA</span>
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div class="order-2 lg:order-1">
+                    <div class="relative">
+                        <div class="w-80 h-80 mx-auto bg-gradient-to-br from-brand-green to-brand-blue rounded-3xl overflow-hidden shadow-2xl">
+                            <div class="w-full h-full bg-gradient-to-br from-brand-blue to-brand-dark flex items-center justify-center">
+                                <span class="text-6xl text-white font-bold">AA</span>
+                            </div>
+                        </div>
+                        <div class="absolute -bottom-6 -right-6 bg-brand-green rounded-2xl p-4 shadow-lg">
+                            <i class="fas fa-code text-2xl text-brand-dark"></i>
                         </div>
                     </div>
                 </div>
                 
-                <div>
-                    <h2 class="text-4xl font-bold text-gray-900 mb-6">
-                        Quem sou eu
-                    </h2>
-                    <h3 class="text-2xl gradient-text font-semibold mb-4">
-                        André Axel
-                    </h3>
-                    <div class="space-y-4 text-gray-600 leading-relaxed">
+                <div class="order-1 lg:order-2 space-y-8">
+                    <div class="space-y-4">
+                        <div class="inline-flex items-center bg-brand-green/20 text-brand-dark rounded-full px-4 py-2 text-sm font-medium">
+                            Sobre o especialista
+                        </div>
+                        <br>
+                        <br>
+                        <h2 class="text-4xl lg:text-5xl font-bold text-brand-dark">André Axel</h2>
+                        <h3 class="text-xl text-brand-blue font-semibold">Especialista em Automação & Integração</h3>
+                    </div>
+                    
+                    <div class="space-y-6 text-lg text-brand-dark/80 leading-relaxed">
                         <p>
-                            Bacharel em Ciência da Computação com experiência em automação de processos e integrações de sistemas via APIs.
+                            <strong class="text-brand-dark">Bacharel em Ciência da Computação</strong> com mais de 5 anos de experiência em automação de processos e integrações de sistemas via APIs.
                         </p>
                         <p>
-                            Ajudo empresas a otimizar operações, reduzir erros e aumentar a produtividade.
-                        </p>
-                        <p>
-                            Desenvolvo soluções personalizadas que conectam plataformas diversas, simplificando fluxos de trabalho e garantindo eficiência operacional.
+                            Especializado em conectar plataformas diversas e criar fluxos inteligentes que <strong class="text-brand-blue">eliminam tarefas repetitivas</strong> e <strong class="text-brand-green">aumentam a produtividade</strong> das equipes.
                         </p>
                     </div>
                 </div>
@@ -183,542 +214,804 @@
         </div>
     </section>
 
-    <!-- Problemas que Resolvo -->
-    <section class="section-padding bg-gray-100">
+    <!-- Problemas Section -->
+    <section class="py-24 bg-brand-light/50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold text-gray-900 mb-6">
-                    Problemas que resolvo
-                </h2>
-                <div class="max-w-4xl mx-auto">
-                    <div class="bg-blue-50 border-l-4 border-blue-500 p-6 rounded-r-lg">
-                        <p class="text-lg text-gray-700 leading-relaxed">
-                            Muitas empresas ainda perdem tempo com <strong>tarefas manuais</strong>, <strong>retrabalho</strong> e <strong>processos que não se comunicam entre si</strong>. A falta de integração entre sistemas <strong>gera atrasos, erros</strong> e <strong>tira o foco do que realmente importa</strong>: o crescimento do negócio.
-                        </p>
-                    </div>
+            <div class="text-center mb-20">
+                <div class="inline-flex items-center bg-red-100 text-red-700 rounded-full px-4 py-2 text-sm font-medium mb-6">
+                    Principais desafios empresariais
+                </div>
+                <br>
+                <br>
+                <h2 class="text-4xl lg:text-5xl font-bold text-brand-dark mb-8">Problemas que <span class="text-red-600">Resolvemos</span></h2>
+                
+                <div class="max-w-4xl mx-auto bg-red-50 border-l-4 border-red-500 p-8 rounded-r-2xl">
+                    <p class="text-lg lg:text-xl text-brand-dark leading-relaxed">
+                        Empresas perdem <strong class="text-red-600">tempo valioso</strong> com tarefas manuais, retrabalho e sistemas isolados. 
+                        Isso gera <strong>atrasos, erros custosos</strong> e tira o foco do que realmente importa: 
+                        <strong class="text-brand-blue">o crescimento sustentável do negócio</strong>.
+                    </p>
                 </div>
             </div>
             
             <div class="grid md:grid-cols-3 gap-8">
-                <div class="bg-white p-6 rounded-lg shadow-sm card-hover">
-                    <div class="text-red-500 text-3xl mb-4">
-                        <i class="fas fa-exclamation-triangle"></i>
+                <div class="group bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-brand-green/10">
+                    <div class="w-16 h-16 bg-red-100 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-clock text-2xl text-red-600"></i>
                     </div>
-                    <h3 class="text-xl font-semibold mb-3">Tarefas Manuais</h3>
-                    <p class="text-gray-600">Processos repetitivos que consomem tempo valioso da sua equipe.</p>
+                    <h3 class="text-xl font-bold text-brand-dark mb-4">Processos Manuais</h3>
+                    <p class="text-brand-dark/70 leading-relaxed">
+                        Tarefas repetitivas consomem horas preciosas que poderiam ser investidas em atividades estratégicas.
+                    </p>
+                    <div class="mt-6 text-sm text-red-600 font-medium">
+                        Solução: Automação Inteligente
+                    </div>
                 </div>
                 
-                <div class="bg-white p-6 rounded-lg shadow-sm card-hover">
-                    <div class="text-orange-500 text-3xl mb-4">
-                        <i class="fas fa-redo"></i>
+                <div class="group bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-brand-green/10">
+                    <div class="w-16 h-16 bg-orange-100 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-redo text-2xl text-orange-600"></i>
                     </div>
-                    <h3 class="text-xl font-semibold mb-3">Retrabalho</h3>
-                    <p class="text-gray-600">Duplicação de esforços por falta de integração entre sistemas.</p>
+                    <h3 class="text-xl font-bold text-brand-dark mb-4">Retrabalho Constante</h3>
+                    <p class="text-brand-dark/70 leading-relaxed">
+                        Falta de integração força sua equipe a duplicar esforços e refazer trabalhos já realizados.
+                    </p>
+                    <div class="mt-6 text-sm text-orange-600 font-medium">
+                        Solução: Integração Total
+                    </div>
                 </div>
                 
-                <div class="bg-white p-6 rounded-lg shadow-sm card-hover">
-                    <div class="text-blue-500 text-3xl mb-4">
-                        <i class="fas fa-unlink"></i>
+                <div class="group bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-brand-green/10">
+                    <div class="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-unlink text-2xl text-blue-600"></i>
                     </div>
-                    <h3 class="text-xl font-semibold mb-3">Sistemas Isolados</h3>
-                    <p class="text-gray-600">Plataformas que não se comunicam, gerando inconsistências.</p>
+                    <h3 class="text-xl font-bold text-brand-dark mb-4">Sistemas Isolados</h3>
+                    <p class="text-brand-dark/70 leading-relaxed">
+                        Dados fragmentados em plataformas que não conversam geram inconsistências e decisões erradas.
+                    </p>
+                    <div class="mt-6 text-sm text-blue-600 font-medium">
+                        Solução: Conectividade Completa
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- O que eu faço -->
-    <section id="servicos" class="section-padding bg-white">
+    <!-- Serviços Section -->
+    <section id="servicos" class="py-24 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold text-gray-900 mb-6">
-                    O que eu faço
-                </h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                    Automatizo rotinas e conecto plataformas como WhatsApp, RD Station, ERPs, CRMs, planilhas, ferramentas de assinatura digital, entre outras.
+            <div class="text-center mb-20">
+                <div class="inline-flex items-center bg-brand-green/20 text-brand-dark rounded-full px-4 py-2 text-sm font-medium mb-6">
+                    Nossa especialidade
+                </div>
+                <br>
+                <br>
+                <h2 class="text-4xl lg:text-5xl font-bold text-brand-dark mb-8">Como <span class="text-brand-blue">Transformamos</span> Seu Negócio</h2>
+                <p class="text-xl text-brand-dark/70 max-w-3xl mx-auto leading-relaxed">
+                    Conectamos e automatizamos sistemas como WhatsApp, CRMs, ERPs, ferramentas de assinatura digital e muito mais.
                 </p>
             </div>
             
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-lg card-hover">
-                    <div class="text-blue-600 text-3xl mb-4">
-                        <i class="fas fa-robot"></i>
+                <div class="group relative bg-gradient-to-br from-brand-blue/10 to-brand-blue/20 rounded-2xl p-8 hover:shadow-2xl transition-all duration-500 border border-brand-blue/20">
+                    <div class="w-16 h-16 bg-brand-blue rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-robot text-2xl text-white"></i>
                     </div>
-                    <h3 class="text-xl font-semibold mb-3">Automação de Processos</h3>
-                    <p class="text-gray-600">Elimino tarefas repetitivas e crio fluxos inteligentes.</p>
-                </div>
-                
-                <div class="bg-gradient-to-br from-green-50 to-green-100 p-6 rounded-lg card-hover">
-                    <div class="text-green-600 text-3xl mb-4">
-                        <i class="fas fa-link"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-3">Integração de Sistemas</h3>
-                    <p class="text-gray-600">Conecto suas plataformas para que trabalhem em harmonia.</p>
-                </div>
-                
-                <div class="bg-gradient-to-br from-purple-50 to-purple-100 p-6 rounded-lg card-hover">
-                    <div class="text-purple-600 text-3xl mb-4">
-                        <i class="fas fa-bell"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-3">Notificações Automáticas</h3>
-                    <p class="text-gray-600">Mantenha clientes sempre informados automaticamente.</p>
-                </div>
-                
-                <div class="bg-gradient-to-br from-orange-50 to-orange-100 p-6 rounded-lg card-hover">
-                    <div class="text-orange-600 text-3xl mb-4">
-                        <i class="fas fa-file-signature"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-3">Assinatura Digital</h3>
-                    <p class="text-gray-600">Integro ferramentas de assinatura aos seus processos.</p>
-                </div>
-                
-                <div class="bg-gradient-to-br from-teal-50 to-teal-100 p-6 rounded-lg card-hover">
-                    <div class="text-teal-600 text-3xl mb-4">
-                        <i class="fas fa-chart-line"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-3">Análise de Dados</h3>
-                    <p class="text-gray-600">Transformo dados em insights acionáveis.</p>
-                </div>
-                
-                <div class="bg-gradient-to-br from-red-50 to-red-100 p-6 rounded-lg card-hover">
-                    <div class="text-red-600 text-3xl mb-4">
-                        <i class="fas fa-cogs"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-3">Soluções Personalizadas</h3>
-                    <p class="text-gray-600">Desenvolvo ferramentas sob medida para seu negócio.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Benefícios -->
-    <section class="section-padding bg-gray-900 text-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold mb-6">Benefícios</h2>
-            </div>
-            
-            <div class="grid md:grid-cols-2 gap-12 items-center">
-                <div class="space-y-6">
-                    <div class="flex items-start space-x-4">
-                        <div class="bg-green-500 w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                            <i class="fas fa-check text-sm"></i>
-                        </div>
-                        <div>
-                            <h3 class="text-xl font-semibold mb-2">Maior Agilidade</h3>
-                            <p class="text-gray-300">Processos automatizados executam tarefas em segundos.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="flex items-start space-x-4">
-                        <div class="bg-blue-500 w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                            <i class="fas fa-check text-sm"></i>
-                        </div>
-                        <div>
-                            <h3 class="text-xl font-semibold mb-2">Redução de Erros</h3>
-                            <p class="text-gray-300">Eliminação de falhas humanas em processos repetitivos.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="flex items-start space-x-4">
-                        <div class="bg-purple-500 w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                            <i class="fas fa-check text-sm"></i>
-                        </div>
-                        <div>
-                            <h3 class="text-xl font-semibold mb-2">Economia de Tempo</h3>
-                            <p class="text-gray-300">Sua equipe foca no que realmente gera valor.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="flex items-start space-x-4">
-                        <div class="bg-yellow-500 w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                            <i class="fas fa-check text-sm"></i>
-                        </div>
-                        <div>
-                            <h3 class="text-xl font-semibold mb-2">Melhor Experiência do Cliente</h3>
-                            <p class="text-gray-300">Atendimento mais rápido e personalizado.</p>
-                        </div>
+                    <h3 class="text-xl font-bold text-brand-dark mb-4">Automação de Processos</h3>
+                    <p class="text-brand-dark/70 leading-relaxed mb-6">
+                        Eliminamos tarefas repetitivas criando fluxos inteligentes que funcionam 24/7.
+                    </p>
+                    <div class="text-sm text-brand-blue font-medium">
+                        → Economia de até 80% do tempo
                     </div>
                 </div>
                 
-                <div class="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
-                    <h3 class="text-2xl font-semibold mb-6 text-center">Resultado Final</h3>
-                    <div class="text-center space-y-4">
-                        <div class="text-4xl text-green-400 mb-2">
-                            <i class="fas fa-arrow-up"></i>
-                        </div>
-                        <p class="text-lg">
-                            <strong>Mais controle e previsibilidade</strong> nas etapas do atendimento, vendas ou qualquer outro fluxo importante para o seu negócio.
-                        </p>
+                <div class="group relative bg-gradient-to-br from-brand-green/10 to-brand-green/20 rounded-2xl p-8 hover:shadow-2xl transition-all duration-500 border border-brand-green/20">
+                    <div class="w-16 h-16 bg-brand-green rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-link text-2xl text-brand-dark"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-brand-dark mb-4">Integração de Sistemas</h3>
+                    <p class="text-brand-dark/70 leading-relaxed mb-6">
+                        Conectamos todas suas plataformas para trabalharem em perfeita harmonia.
+                    </p>
+                    <div class="text-sm text-brand-green font-medium">
+                        → Dados sincronizados em tempo real
+                    </div>
+                </div>
+                
+                <div class="group relative bg-gradient-to-br from-purple-100 to-purple-200 rounded-2xl p-8 hover:shadow-2xl transition-all duration-500 border border-purple-200">
+                    <div class="w-16 h-16 bg-purple-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-bell text-2xl text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-brand-dark mb-4">Notificações Inteligentes</h3>
+                    <p class="text-brand-dark/70 leading-relaxed mb-6">
+                        Mantenha clientes sempre informados com comunicação automática e personalizada.
+                    </p>
+                    <div class="text-sm text-purple-600 font-medium">
+                        → Satisfação do cliente 95%+
+                    </div>
+                </div>
+                
+                <div class="group relative bg-gradient-to-br from-orange-100 to-orange-200 rounded-2xl p-8 hover:shadow-2xl transition-all duration-500 border border-orange-200">
+                    <div class="w-16 h-16 bg-orange-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-file-signature text-2xl text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-brand-dark mb-4">Assinatura Digital</h3>
+                    <p class="text-brand-dark/70 leading-relaxed mb-6">
+                        Integração completa com plataformas de assinatura para fluxos documentais.
+                    </p>
+                    <div class="text-sm text-orange-600 font-medium">
+                        → Contratos 90% mais rápidos
+                    </div>
+                </div>
+                
+                <div class="group relative bg-gradient-to-br from-teal-100 to-teal-200 rounded-2xl p-8 hover:shadow-2xl transition-all duration-500 border border-teal-200">
+                    <div class="w-16 h-16 bg-teal-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-chart-line text-2xl text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-brand-dark mb-4">Analytics & Insights</h3>
+                    <p class="text-brand-dark/70 leading-relaxed mb-6">
+                        Transformamos dados em insights acionáveis para decisões estratégicas.
+                    </p>
+                    <div class="text-sm text-teal-600 font-medium">
+                        → Decisões baseadas em dados
+                    </div>
+                </div>
+                
+                <div class="group relative bg-gradient-to-br from-red-100 to-red-200 rounded-2xl p-8 hover:shadow-2xl transition-all duration-500 border border-red-200">
+                    <div class="w-16 h-16 bg-red-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-cogs text-2xl text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-brand-dark mb-4">Soluções Personalizadas</h3>
+                    <p class="text-brand-dark/70 leading-relaxed mb-6">
+                        Desenvolvemos ferramentas sob medida para necessidades específicas.
+                    </p>
+                    <div class="text-sm text-red-600 font-medium">
+                        → 100% adequado ao seu negócio
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Projetos/Cases -->
-    <section id="projetos" class="section-padding bg-white">
+    <!-- Cases/Projetos Section -->
+    <section id="projetos" class="py-24 bg-brand-light/50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold text-gray-900 mb-6">
-                    Exemplos de Projetos
+            <div class="text-center mb-20">
+                <div class="inline-flex items-center bg-brand-blue/20 text-brand-dark rounded-full px-4 py-2 text-sm font-medium mb-6">
+                    Cases de sucesso
+                </div>
+                <br>
+                <br>
+                <h2 class="text-4xl lg:text-5xl font-bold text-brand-dark mb-8">
+                Projetos que <span class="text-brand-blue">Transformaram</span> Negócios
                 </h2>
-                <p class="text-xl text-gray-600">Cases reais de automação implementados</p>
+                <p class="text-xl text-brand-dark/70 max-w-3xl mx-auto">
+                    Veja como nossa automação revolucionou a operação de empresas reais
+                </p>
             </div>
             
-            <div class="grid lg:grid-cols-2 gap-8">
+            <div class="grid lg:grid-cols-2 gap-12">
                 <!-- Case 1 -->
-                <div class="bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl p-8 card-hover">
-                    <div class="flex items-center space-x-3 mb-6">
-                        <div class="bg-blue-600 w-10 h-10 rounded-full flex items-center justify-center">
-                            <i class="fab fa-whatsapp text-white"></i>
+                <div class="bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 border border-brand-green/10">
+                    <div class="bg-gradient-to-br from-brand-blue to-brand-dark p-8 text-white">
+                        <div class="flex items-center space-x-4 mb-6">
+                            <div class="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center">
+                                <i class="fab fa-whatsapp text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold">Status Automático WhatsApp</h3>
+                                <div class="text-brand-green text-sm">Assistência Técnica</div>
+                            </div>
                         </div>
-                        <h3 class="text-2xl font-bold text-gray-900">Status Automático no WhatsApp</h3>
+                        
+                        <div class="grid grid-cols-3 gap-4 text-center">
+                            <div>
+                                <div class="text-2xl font-bold text-brand-green">70%</div>
+                                <div class="text-xs opacity-80">Menos Trabalho</div>
+                            </div>
+                            <div>
+                                <div class="text-2xl font-bold text-brand-green">95%</div>
+                                <div class="text-xs opacity-80">Satisfação</div>
+                            </div>
+                            <div>
+                                <div class="text-2xl font-bold text-brand-green">24/7</div>
+                                <div class="text-xs opacity-80">Automático</div>
+                            </div>
+                        </div>
                     </div>
                     
-                    <div class="space-y-4">
+                    <div class="p-8 space-y-6">
                         <div>
-                            <h4 class="font-semibold text-red-600 mb-2">Problema:</h4>
-                            <p class="text-gray-700">Uma assistência técnica precisava manter os clientes informados sobre o status dos aparelhos em manutenção, mas isso exigia contato manual constante.</p>
+                            <h4 class="font-semibold text-red-600 mb-2 flex items-center">
+                                <i class="fas fa-exclamation-circle mr-2"></i>
+                                Problema
+                            </h4>
+                            <p class="text-brand-dark/70">
+                                Assistência técnica precisava informar clientes sobre status dos aparelhos manualmente, consumindo horas da equipe diariamente.
+                            </p>
                         </div>
                         
                         <div>
-                            <h4 class="font-semibold text-blue-600 mb-2">Solução:</h4>
-                            <p class="text-gray-700">Desenvolvi uma automação que envia mensagens no WhatsApp sempre que o status de uma Ordem de Serviço muda (ex: "Em manutenção", "Aguardando peça", "Pronto para retirada"). Todo o processo é automático.</p>
+                            <h4 class="font-semibold text-brand-blue mb-2 flex items-center">
+                                <i class="fas fa-lightbulb mr-2"></i>
+                                Solução
+                            </h4>
+                            <p class="text-brand-dark/70">
+                                Sistema automático que envia mensagens WhatsApp sempre que status muda: "Em manutenção", "Pronto para retirada", etc.
+                            </p>
                         </div>
                         
                         <div>
-                            <h4 class="font-semibold text-green-600 mb-2">Resultado:</h4>
-                            <p class="text-gray-700">Redução de trabalho manual, aumento na satisfação dos clientes e maior eficiência no atendimento.</p>
+                            <h4 class="font-semibold text-brand-green mb-2 flex items-center">
+                                <i class="fas fa-chart-line mr-2"></i>
+                                Resultado
+                            </h4>
+                            <p class="text-brand-dark/70">
+                                70% menos trabalho manual, clientes sempre informados e equipe focada em reparos.
+                            </p>
                         </div>
                         
-                        <div class="flex flex-wrap gap-2 mt-4">
-                            <span class="bg-blue-200 text-blue-800 px-3 py-1 rounded-full text-sm">WhatsApp API</span>
-                            <span class="bg-blue-200 text-blue-800 px-3 py-1 rounded-full text-sm">MySQL</span>
-                            <span class="bg-blue-200 text-blue-800 px-3 py-1 rounded-full text-sm">n8n</span>
+                        <div class="flex flex-wrap gap-2 pt-4">
+                            <span class="bg-brand-blue/20 text-brand-blue px-3 py-1 rounded-full text-sm font-medium">WhatsApp API</span>
+                            <span class="bg-brand-blue/20 text-brand-blue px-3 py-1 rounded-full text-sm font-medium">MySQL</span>
+                            <span class="bg-brand-blue/20 text-brand-blue px-3 py-1 rounded-full text-sm font-medium">Automação</span>
                         </div>
                     </div>
                 </div>
                 
                 <!-- Case 2 -->
-                <div class="bg-gradient-to-br from-green-50 to-green-100 rounded-2xl p-8 card-hover">
-                    <div class="flex items-center space-x-3 mb-6">
-                        <div class="bg-green-600 w-10 h-10 rounded-full flex items-center justify-center">
-                            <i class="fas fa-home text-white"></i>
+                <div class="bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 border border-brand-green/10">
+                    <div class="bg-gradient-to-br from-brand-green to-brand-blue p-8 text-white">
+                        <div class="flex items-center space-x-4 mb-6">
+                            <div class="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center">
+                                <i class="fas fa-home text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold">Captura Instantânea de Leads</h3>
+                                <div class="text-brand-light text-sm">Imobiliária Digital</div>
+                            </div>
                         </div>
-                        <h3 class="text-2xl font-bold text-gray-900">Captura Instantânea de Leads</h3>
+                        
+                        <div class="grid grid-cols-3 gap-4 text-center">
+                            <div>
+                                <div class="text-2xl font-bold text-brand-light">85%</div>
+                                <div class="text-xs opacity-80">Mais Conversões</div>
+                            </div>
+                            <div>
+                                <div class="text-2xl font-bold text-brand-light">30s</div>
+                                <div class="text-xs opacity-80">Tempo Resposta</div>
+                            </div>
+                            <div>
+                                <div class="text-2xl font-bold text-brand-light">100%</div>
+                                <div class="text-xs opacity-80">Leads Capturados</div>
+                            </div>
+                        </div>
                     </div>
                     
-                    <div class="space-y-4">
+                    <div class="p-8 space-y-6">
                         <div>
-                            <h4 class="font-semibold text-red-600 mb-2">Problema:</h4>
-                            <p class="text-gray-700">A imobiliária recebia contatos por formulários do site e por e-mail, mas os atendimentos eram lentos ou esquecidos, prejudicando a conversão dos leads.</p>
+                            <h4 class="font-semibold text-red-600 mb-2 flex items-center">
+                                <i class="fas fa-exclamation-circle mr-2"></i>
+                                Problema
+                            </h4>
+                            <p class="text-brand-dark/70">
+                                Leads do site eram perdidos por atendimento lento. Clientes desistiam antes do primeiro contato.
+                            </p>
                         </div>
                         
                         <div>
-                            <h4 class="font-semibold text-blue-600 mb-2">Solução:</h4>
-                            <p class="text-gray-700">Desenvolvi uma automação que identifica leads enviados pelo site ou por e-mail, cria automaticamente um cadastro no CRM e envia uma mensagem instantânea para iniciar o atendimento.</p>
+                            <h4 class="font-semibold text-brand-blue mb-2 flex items-center">
+                                <i class="fas fa-lightbulb mr-2"></i>
+                                Solução
+                            </h4>
+                            <p class="text-brand-dark/70">
+                                Automação que detecta leads, cria cadastro no CRM e envia mensagem WhatsApp instantaneamente.
+                            </p>
                         </div>
                         
                         <div>
-                            <h4 class="font-semibold text-green-600 mb-2">Resultado:</h4>
-                            <p class="text-gray-700">A imobiliária passou a entrar em contato no momento certo, aumentando o engajamento e as chances de fechar negócio.</p>
+                            <h4 class="font-semibold text-brand-green mb-2 flex items-center">
+                                <i class="fas fa-chart-line mr-2"></i>
+                                Resultado
+                            </h4>
+                            <p class="text-brand-dark/70">
+                                85% mais conversões, atendimento em 30 segundos, zero leads perdidos.
+                            </p>
                         </div>
                         
-                        <div class="flex flex-wrap gap-2 mt-4">
-                            <span class="bg-green-200 text-green-800 px-3 py-1 rounded-full text-sm">WhatsApp API</span>
-                            <span class="bg-green-200 text-green-800 px-3 py-1 rounded-full text-sm">Gmail</span>
-                            <span class="bg-green-200 text-green-800 px-3 py-1 rounded-full text-sm">Elementor</span>
-                            <span class="bg-green-200 text-green-800 px-3 py-1 rounded-full text-sm">n8n</span>
+                        <div class="flex flex-wrap gap-2 pt-4">
+                            <span class="bg-brand-green/20 text-brand-green px-3 py-1 rounded-full text-sm font-medium">WordPress</span>
+                            <span class="bg-brand-green/20 text-brand-green px-3 py-1 rounded-full text-sm font-medium">CRM</span>
+                            <span class="bg-brand-green/20 text-brand-green px-3 py-1 rounded-full text-sm font-medium">WhatsApp</span>
                         </div>
                     </div>
                 </div>
+            </div>
+            
+            <div class="text-center mt-16">
+                <a href="https://wa.me/5519997330171?text=Olá! Vi os cases e gostaria de um projeto similar para minha empresa." 
+                   target="_blank"
+                   class="inline-flex items-center bg-brand-blue hover:bg-brand-blue/90 text-white px-8 py-4 rounded-xl font-semibold transition-all duration-300 shadow-lg hover:shadow-xl">
+                    <i class="fas fa-rocket mr-3"></i>
+                    Quero um Projeto Similar
+                </a>
             </div>
         </div>
     </section>
 
-    <!-- Plataformas Integráveis -->
-    <section id="plataformas" class="section-padding bg-gray-100">
+    <!-- Plataformas Section -->
+    <section id="plataformas" class="py-24 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold text-gray-900 mb-6">
-                    Plataformas Integráveis
+            <div class="text-center mb-20">
+                <div class="inline-flex items-center bg-brand-green/20 text-brand-dark rounded-full px-4 py-2 text-sm font-medium mb-6">
+                    Ecossistema de integração
+                </div>
+                <br>
+                <br>
+                <h2 class="text-4xl lg:text-5xl font-bold text-brand-dark mb-8">
+                    <span class="text-brand-blue">100+ Plataformas</span> Integráveis
                 </h2>
-                <p class="text-xl text-gray-600">Conecto os principais sistemas do mercado</p>
+                <p class="text-xl text-brand-dark/70 max-w-3xl mx-auto">
+                    Conectamos os principais sistemas do mercado para criar um ecossistema unificado
+                </p>
             </div>
             
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- CRM & Vendas -->
-                <div class="bg-white p-6 rounded-lg shadow-sm">
-                    <h3 class="text-xl font-semibold mb-4 text-blue-600">CRM & Vendas</h3>
-                    <div class="space-y-2">
-                        <div class="flex items-center space-x-2">
-                            <i class="fas fa-check text-green-500"></i>
-                            <span>RD Station</span>
+                <div class="bg-gradient-to-br from-brand-blue/10 to-brand-blue/20 rounded-2xl p-8 border border-brand-blue/20 hover:shadow-xl transition-all duration-300">
+                    <div class="flex items-center space-x-3 mb-6">
+                        <div class="w-10 h-10 bg-brand-blue rounded-xl flex items-center justify-center">
+                            <i class="fas fa-chart-pie text-white"></i>
                         </div>
-                        <div class="flex items-center space-x-2">
-                            <i class="fas fa-check text-green-500"></i>
-                            <span>Pipedrive</span>
+                        <h3 class="text-xl font-bold text-brand-dark">CRM & Vendas</h3>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="flex items-center space-x-3 p-3 bg-white/70 rounded-lg">
+                            <i class="fas fa-check text-brand-green"></i>
+                            <span class="font-medium">RD Station</span>
                         </div>
-                        <div class="flex items-center space-x-2">
-                            <i class="fas fa-check text-green-500"></i>
-                            <span>HubSpot</span>
+                        <div class="flex items-center space-x-3 p-3 bg-white/70 rounded-lg">
+                            <i class="fas fa-check text-brand-green"></i>
+                            <span class="font-medium">Pipedrive</span>
                         </div>
-                        <div class="flex items-center space-x-2">
-                            <i class="fas fa-check text-green-500"></i>
-                            <span>Moskit</span>
+                        <div class="flex items-center space-x-3 p-3 bg-white/70 rounded-lg">
+                            <i class="fas fa-check text-brand-green"></i>
+                            <span class="font-medium">HubSpot</span>
                         </div>
-                        <div class="flex items-center space-x-2">
-                            <i class="fas fa-check text-green-500"></i>
-                            <span>Salesforce</span>
+                        <div class="flex items-center space-x-3 p-3 bg-white/70 rounded-lg">
+                            <i class="fas fa-check text-brand-green"></i>
+                            <span class="font-medium">Salesforce</span>
                         </div>
                     </div>
                 </div>
                 
-                <!-- Atendimento & Comunicação -->
-                <div class="bg-white p-6 rounded-lg shadow-sm">
-                    <h3 class="text-xl font-semibold mb-4 text-green-600">Atendimento & Comunicação</h3>
-                    <div class="space-y-2">
-                        <div class="flex items-center space-x-2">
-                            <i class="fas fa-check text-green-500"></i>
-                            <span>WhatsApp Business</span>
+                <!-- Comunicação -->
+                <div class="bg-gradient-to-br from-brand-green/10 to-brand-green/20 rounded-2xl p-8 border border-brand-green/20 hover:shadow-xl transition-all duration-300">
+                    <div class="flex items-center space-x-3 mb-6">
+                        <div class="w-10 h-10 bg-brand-green rounded-xl flex items-center justify-center">
+                            <i class="fas fa-comments text-brand-dark"></i>
                         </div>
-                        <div class="flex items-center space-x-2">
-                            <i class="fas fa-check text-green-500"></i>
-                            <span>Gmail</span>
+                        <h3 class="text-xl font-bold text-brand-dark">Comunicação</h3>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="flex items-center space-x-3 p-3 bg-white/70 rounded-lg">
+                            <i class="fas fa-check text-brand-green"></i>
+                            <span class="font-medium">WhatsApp Business</span>
                         </div>
-                        <div class="flex items-center space-x-2">
-                            <i class="fas fa-check text-green-500"></i>
-                            <span>Messenger</span>
+                        <div class="flex items-center space-x-3 p-3 bg-white/70 rounded-lg">
+                            <i class="fas fa-check text-brand-green"></i>
+                            <span class="font-medium">Gmail</span>
                         </div>
-                        <div class="flex items-center space-x-2">
-                            <i class="fas fa-check text-green-500"></i>
-                            <span>Telegram</span>
+                        <div class="flex items-center space-x-3 p-3 bg-white/70 rounded-lg">
+                            <i class="fas fa-check text-brand-green"></i>
+                            <span class="font-medium">Telegram</span>
                         </div>
-                        <div class="flex items-center space-x-2">
-                            <i class="fas fa-check text-green-500"></i>
-                            <span>LinkedIn</span>
+                        <div class="flex items-center space-x-3 p-3 bg-white/70 rounded-lg">
+                            <i class="fas fa-check text-brand-green"></i>
+                            <span class="font-medium">LinkedIn</span>
                         </div>
                     </div>
                 </div>
                 
                 <!-- Gestão & Processos -->
-                <div class="bg-white p-6 rounded-lg shadow-sm">
-                    <h3 class="text-xl font-semibold mb-4 text-purple-600">Gestão & Processos</h3>
-                    <div class="space-y-2">
-                        <div class="flex items-center space-x-2">
-                            <i class="fas fa-check text-green-500"></i>
-                            <span>Pipefy</span>
+                <div class="bg-gradient-to-br from-purple-100 to-purple-200 rounded-2xl p-8 border border-purple-200 hover:shadow-xl transition-all duration-300">
+                    <div class="flex items-center space-x-3 mb-6">
+                        <div class="w-10 h-10 bg-purple-600 rounded-xl flex items-center justify-center">
+                            <i class="fas fa-tasks text-white"></i>
                         </div>
-                        <div class="flex items-center space-x-2">
-                            <i class="fas fa-check text-green-500"></i>
-                            <span>Google Calendar</span>
+                        <h3 class="text-xl font-bold text-brand-dark">Gestão & Processos</h3>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="flex items-center space-x-3 p-3 bg-white/70 rounded-lg">
+                            <i class="fas fa-check text-brand-green"></i>
+                            <span class="font-medium">Pipefy</span>
                         </div>
-                        <div class="flex items-center space-x-2">
-                            <i class="fas fa-check text-green-500"></i>
-                            <span>ClickUp</span>
+                        <div class="flex items-center space-x-3 p-3 bg-white/70 rounded-lg">
+                            <i class="fas fa-check text-brand-green"></i>
+                            <span class="font-medium">ClickUp</span>
                         </div>
-                        <div class="flex items-center space-x-2">
-                            <i class="fas fa-check text-green-500"></i>
-                            <span>Asana</span>
+                        <div class="flex items-center space-x-3 p-3 bg-white/70 rounded-lg">
+                            <i class="fas fa-check text-brand-green"></i>
+                            <span class="font-medium">Notion</span>
                         </div>
-                        <div class="flex items-center space-x-2">
-                            <i class="fas fa-check text-green-500"></i>
-                            <span>Notion</span>
-                        </div>
-                        <div class="flex items-center space-x-2">
-                            <i class="fas fa-check text-green-500"></i>
-                            <span>Monday.com</span>
+                        <div class="flex items-center space-x-3 p-3 bg-white/70 rounded-lg">
+                            <i class="fas fa-check text-brand-green"></i>
+                            <span class="font-medium">Monday.com</span>
                         </div>
                     </div>
                 </div>
                 
                 <!-- Análises & Dados -->
-                <div class="bg-white p-6 rounded-lg shadow-sm">
-                    <h3 class="text-xl font-semibold mb-4 text-orange-600">Análises & Dados</h3>
-                    <div class="space-y-2">
-                        <div class="flex items-center space-x-2">
-                            <i class="fas fa-check text-green-500"></i>
-                            <span>Google Sheets</span>
+                <div class="bg-gradient-to-br from-orange-100 to-orange-200 rounded-2xl p-8 border border-orange-200 hover:shadow-xl transition-all duration-300">
+                    <div class="flex items-center space-x-3 mb-6">
+                        <div class="w-10 h-10 bg-orange-600 rounded-xl flex items-center justify-center">
+                            <i class="fas fa-chart-bar text-white"></i>
                         </div>
-                        <div class="flex items-center space-x-2">
-                            <i class="fas fa-check text-green-500"></i>
-                            <span>Power BI</span>
+                        <h3 class="text-xl font-bold text-brand-dark">Análises & Dados</h3>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="flex items-center space-x-3 p-3 bg-white/70 rounded-lg">
+                            <i class="fas fa-check text-brand-green"></i>
+                            <span class="font-medium">Google Sheets</span>
                         </div>
-                        <div class="flex items-center space-x-2">
-                            <i class="fas fa-check text-green-500"></i>
-                            <span>Google Drive</span>
+                        <div class="flex items-center space-x-3 p-3 bg-white/70 rounded-lg">
+                            <i class="fas fa-check text-brand-green"></i>
+                            <span class="font-medium">Power BI</span>
                         </div>
-                        <div class="flex items-center space-x-2">
-                            <i class="fas fa-check text-green-500"></i>
-                            <span>Supabase</span>
+                        <div class="flex items-center space-x-3 p-3 bg-white/70 rounded-lg">
+                            <i class="fas fa-check text-brand-green"></i>
+                            <span class="font-medium">Google Drive</span>
                         </div>
-                        <div class="flex items-center space-x-2">
-                            <i class="fas fa-check text-green-500"></i>
-                            <span>MySQL</span>
+                        <div class="flex items-center space-x-3 p-3 bg-white/70 rounded-lg">
+                            <i class="fas fa-check text-brand-green"></i>
+                            <span class="font-medium">MySQL</span>
                         </div>
                     </div>
                 </div>
                 
-                <!-- Documentos & Assinaturas -->
-                <div class="bg-white p-6 rounded-lg shadow-sm">
-                    <h3 class="text-xl font-semibold mb-4 text-teal-600">Documentos & Assinaturas</h3>
-                    <div class="space-y-2">
-                        <div class="flex items-center space-x-2">
-                            <i class="fas fa-check text-green-500"></i>
-                            <span>D4Sign</span>
+                <!-- Assinaturas & Documentos -->
+                <div class="bg-gradient-to-br from-teal-100 to-teal-200 rounded-2xl p-8 border border-teal-200 hover:shadow-xl transition-all duration-300">
+                    <div class="flex items-center space-x-3 mb-6">
+                        <div class="w-10 h-10 bg-teal-600 rounded-xl flex items-center justify-center">
+                            <i class="fas fa-file-signature text-white"></i>
                         </div>
-                        <div class="flex items-center space-x-2">
-                            <i class="fas fa-check text-green-500"></i>
-                            <span>Clicksign</span>
+                        <h3 class="text-xl font-bold text-brand-dark">Assinaturas & Docs</h3>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="flex items-center space-x-3 p-3 bg-white/70 rounded-lg">
+                            <i class="fas fa-check text-brand-green"></i>
+                            <span class="font-medium">D4Sign</span>
                         </div>
-                        <div class="flex items-center space-x-2">
-                            <i class="fas fa-check text-green-500"></i>
-                            <span>DocuSign</span>
+                        <div class="flex items-center space-x-3 p-3 bg-white/70 rounded-lg">
+                            <i class="fas fa-check text-brand-green"></i>
+                            <span class="font-medium">Clicksign</span>
+                        </div>
+                        <div class="flex items-center space-x-3 p-3 bg-white/70 rounded-lg">
+                            <i class="fas fa-check text-brand-green"></i>
+                            <span class="font-medium">DocuSign</span>
                         </div>
                     </div>
                 </div>
                 
                 <!-- Formulários & Coleta -->
-                <div class="bg-white p-6 rounded-lg shadow-sm">
-                    <h3 class="text-xl font-semibold mb-4 text-indigo-600">Formulários & Coleta</h3>
-                    <div class="space-y-2">
-                        <div class="flex items-center space-x-2">
-                            <i class="fas fa-check text-green-500"></i>
-                            <span>Google Forms</span>
+                <div class="bg-gradient-to-br from-indigo-100 to-indigo-200 rounded-2xl p-8 border border-indigo-200 hover:shadow-xl transition-all duration-300">
+                    <div class="flex items-center space-x-3 mb-6">
+                        <div class="w-10 h-10 bg-indigo-600 rounded-xl flex items-center justify-center">
+                            <i class="fas fa-wpforms text-white"></i>
                         </div>
-                        <div class="flex items-center space-x-2">
-                            <i class="fas fa-check text-green-500"></i>
-                            <span>Jotform</span>
+                        <h3 class="text-xl font-bold text-brand-dark">Formulários & Sites</h3>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="flex items-center space-x-3 p-3 bg-white/70 rounded-lg">
+                            <i class="fas fa-check text-brand-green"></i>
+                            <span class="font-medium">Google Forms</span>
                         </div>
-                        <div class="flex items-center space-x-2">
-                            <i class="fas fa-check text-green-500"></i>
-                            <span>Google Docs</span>
+                        <div class="flex items-center space-x-3 p-3 bg-white/70 rounded-lg">
+                            <i class="fas fa-check text-brand-green"></i>
+                            <span class="font-medium">Jotform</span>
                         </div>
-                        <div class="flex items-center space-x-2">
-                            <i class="fas fa-check text-green-500"></i>
-                            <span>Elementor/WordPress</span>
+                        <div class="flex items-center space-x-3 p-3 bg-white/70 rounded-lg">
+                            <i class="fas fa-check text-brand-green"></i>
+                            <span class="font-medium">WordPress</span>
+                        </div>
+                        <div class="flex items-center space-x-3 p-3 bg-white/70 rounded-lg">
+                            <i class="fas fa-check text-brand-green"></i>
+                            <span class="font-medium">Elementor</span>
                         </div>
                     </div>
                 </div>
             </div>
             
-            <div class="text-center mt-12">
-                <div class="bg-gradient-to-r from-blue-600 to-purple-600 text-white p-6 rounded-lg inline-block">
-                    <h3 class="text-xl font-semibold mb-2">E muito mais!</h3>
-                    <p>Além de vários outros sistemas com Webhooks e APIs personalizadas</p>
+            <div class="text-center mt-16">
+                <div class="bg-gradient-to-r from-brand-dark to-brand-blue text-white p-8 rounded-3xl inline-block shadow-2xl">
+                    <h3 class="text-2xl font-bold mb-4">+ APIs Personalizadas</h3>
+                    <p class="text-lg opacity-90 max-w-md">
+                        Além dessas 100+ plataformas, desenvolvemos integrações customizadas via Webhooks e APIs específicas
+                    </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Serviços Personalizados -->
-    <section class="section-padding bg-white">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 class="text-4xl font-bold text-gray-900 mb-6">
-                Serviços Personalizados
-            </h2>
-            <h3 class="text-2xl gradient-text font-semibold mb-6">
-                Aplicações Web
-            </h3>
-            <p class="text-xl text-gray-600 leading-relaxed">
-                Caso sua empresa possua um sistema interno, posso realizar melhorias, integrações e automações personalizadas, de acordo com suas necessidades.
-            </p>
+    <!-- Benefícios Section -->
+    <section class="py-24 bg-gradient-to-br from-brand-dark via-brand-dark to-brand-blue text-white relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute top-0 left-0 w-96 h-96 bg-brand-green rounded-full blur-3xl"></div>
+            <div class="absolute bottom-0 right-0 w-96 h-96 bg-brand-blue rounded-full blur-3xl"></div>
+        </div>
+        
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-20">
+                <div class="inline-flex items-center bg-white/10 backdrop-blur-sm text-white rounded-full px-4 py-2 text-sm font-medium mb-6">
+                    Resultados comprovados
+                </div>
+                <br>
+                <h2 class="text-4xl lg:text-5xl font-bold mb-8">Benefícios <span class="text-brand-green">Reais</span> para Seu Negócio</h2>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <div class="space-y-8">
+                    <div class="flex items-start space-x-4 group">
+                        <div class="w-12 h-12 bg-brand-green rounded-2xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
+                            <i class="fas fa-rocket text-brand-dark text-lg"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold mb-3">Produtividade 10x Maior</h3>
+                            <p class="text-white/80 leading-relaxed">
+                                Processos que levavam horas agora acontecem em minutos. Sua equipe foca no estratégico.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start space-x-4 group">
+                        <div class="w-12 h-12 bg-brand-blue rounded-2xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
+                            <i class="fas fa-shield-alt text-white text-lg"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold mb-3">Zero Erros Manuais</h3>
+                            <p class="text-white/80 leading-relaxed">
+                                Eliminação completa de erros humanos em processos repetitivos e críticos.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start space-x-4 group">
+                        <div class="w-12 h-12 bg-yellow-500 rounded-2xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
+                            <i class="fas fa-clock text-brand-dark text-lg"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold mb-3">Economia de 80% do Tempo</h3>
+                            <p class="text-white/80 leading-relaxed">
+                                Tarefas que levavam 8 horas agora são executadas em menos de 2 horas.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start space-x-4 group">
+                        <div class="w-12 h-12 bg-purple-500 rounded-2xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
+                            <i class="fas fa-heart text-white text-lg"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold mb-3">Clientes 95% Mais Satisfeitos</h3>
+                            <p class="text-white/80 leading-relaxed">
+                                Atendimento instantâneo e comunicação proativa aumentam drasticamente a satisfação.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white/5 backdrop-blur-sm rounded-3xl p-8 border border-white/10">
+                    <div class="text-center mb-8">
+                        <h3 class="text-2xl font-bold text-brand-green mb-4">ROI Médio dos Projetos</h3>
+                        <div class="text-6xl font-bold text-white mb-2">300%</div>
+                        <p class="text-white/70">Retorno em 3-6 meses</p>
+                    </div>
+                    
+                    <div class="space-y-6">
+                        <div class="bg-white/10 rounded-2xl p-6">
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-white/80">Redução de Custos</span>
+                                <span class="text-brand-green font-bold">-60%</span>
+                            </div>
+                            <div class="w-full bg-white/20 rounded-full h-2">
+                                <div class="bg-brand-green h-2 rounded-full" style="width: 60%"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-white/10 rounded-2xl p-6">
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-white/80">Aumento de Receita</span>
+                                <span class="text-brand-green font-bold">+45%</span>
+                            </div>
+                            <div class="w-full bg-white/20 rounded-full h-2">
+                                <div class="bg-brand-green h-2 rounded-full" style="width: 45%"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-white/10 rounded-2xl p-6">
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-white/80">Eficiência Operacional</span>
+                                <span class="text-brand-green font-bold">+85%</span>
+                            </div>
+                            <div class="w-full bg-white/20 rounded-full h-2">
+                                <div class="bg-brand-green h-2 rounded-full" style="width: 85%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- CTA Section -->
-    <section class="section-padding gradient-bg text-white">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 class="text-4xl font-bold mb-6">
-                Você foca no que importa. Eu cuido da automação
-            </h2>
-            <p class="text-xl mb-8 text-blue-100">
-                Se identificou com algum dos problemas ou viu oportunidade de melhoria? Entre em contato e vamos encontrar a melhor solução juntos!
-            </p>
-            
-            <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="https://wa.me/5519999999999?text=Olá! Gostaria de saber mais sobre automação de processos." 
-                   target="_blank"
-                   class="bg-green-500 hover:bg-green-600 text-white px-8 py-4 rounded-lg font-semibold transition-colors flex items-center justify-center space-x-2 text-lg">
-                    <i class="fab fa-whatsapp text-xl"></i>
-                    <span>WhatsApp</span>
-                </a>
+    <section class="py-24 bg-brand-light relative overflow-hidden">
+        <div class="absolute inset-0 opacity-5">
+            <div class="absolute top-20 left-20 w-64 h-64 bg-brand-blue rounded-full blur-3xl"></div>
+            <div class="absolute bottom-20 right-20 w-64 h-64 bg-brand-green rounded-full blur-3xl"></div>
+        </div>
+        
+        <div class="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="space-y-8">
+                <div class="inline-flex items-center bg-brand-green/20 text-brand-dark rounded-full px-4 py-2 text-sm font-medium">
+                    Transforme seu negócio hoje
+                </div>
+                <br>
+                <h2 class="text-4xl lg:text-6xl font-bold text-brand-dark leading-tight">Você foca no que importa.
+<span class="text-brand-blue block">Nós cuidamos da</span>
+                automação
+                </h2>
                 
-                <a href="#" 
-                   class="bg-white/10 backdrop-blur-sm border border-white/20 text-white px-8 py-4 rounded-lg font-semibold hover:bg-white/20 transition-colors flex items-center justify-center space-x-2 text-lg">
-                    <i class="fas fa-file-alt"></i>
-                    <span>Formulário</span>
-                </a>
+                <p class="text-xl lg:text-2xl text-brand-dark/70 leading-relaxed max-w-3xl mx-auto">
+                    Pare de perder tempo com tarefas manuais. Vamos conversar sobre como 
+                    <strong class="text-brand-blue">automatizar seus processos</strong> e 
+                    <strong class="text-brand-blue">multiplicar seus resultados</strong>.
+                </p>
                 
-                <a href="#" 
-                   class="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white px-8 py-4 rounded-lg font-semibold transition-colors flex items-center justify-center space-x-2 text-lg">
-                    <i class="fab fa-instagram"></i>
-                    <span>Instagram</span>
-                </a>
+                <div class="flex flex-col sm:flex-row gap-6 justify-center pt-8">
+                    <a href="https://wa.me/5519997330171?text=Olá! Quero uma consultoria gratuita sobre automação para minha empresa." 
+                       target="_blank"
+                       class="group bg-brand-blue hover:bg-brand-blue/90 text-white px-10 py-5 rounded-2xl font-bold text-lg transition-all duration-300 shadow-xl hover:shadow-2xl hover:scale-105 flex items-center justify-center space-x-3">
+                        <i class="fab fa-whatsapp text-2xl group-hover:scale-110 transition-transform"></i>
+                        <span>Consultoria Gratuita</span>
+                    </a>
+                    
+                    <a href="mailto:axelintegracoes@gmail.com" 
+                       class="border-2 border-brand-dark/20 hover:border-brand-blue text-brand-dark hover:text-brand-blue px-10 py-5 rounded-2xl font-bold text-lg transition-all duration-300 flex items-center justify-center space-x-3 hover:shadow-lg">
+                        <i class="fas fa-envelope text-xl"></i>
+                        <span>Enviar E-mail</span>
+                    </a>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 pt-16">
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-brand-green/20 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-phone text-2xl text-brand-green"></i>
+                        </div>
+                        <h3 class="font-bold text-brand-dark mb-2">Resposta Rápida</h3>
+                        <p class="text-brand-dark/70">Retornamos em até 2 horas</p>
+                    </div>
+                    
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-brand-blue/20 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-handshake text-2xl text-brand-blue"></i>
+                        </div>
+                        <h3 class="font-bold text-brand-dark mb-2">Consultoria Gratuita</h3>
+                        <p class="text-brand-dark/70">Primeira análise sem custo</p>
+                    </div>
+                    
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-yellow-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-trophy text-2xl text-yellow-600"></i>
+                        </div>
+                        <h3 class="font-bold text-brand-dark mb-2">Resultados Garantidos</h3>
+                        <p class="text-brand-dark/70">ROI comprovado em 3-6 meses</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-12">
+    <footer class="bg-brand-dark text-white py-16">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid md:grid-cols-3 gap-8">
-                <div>
-                    <div class="flex items-center space-x-2 mb-4">
-                        <div class="w-8 h-8 bg-blue-600 rounded flex items-center justify-center">
-                            <span class="text-white font-bold text-lg">A</span>
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="md:col-span-2">
+                    <div class="flex items-center space-x-3 mb-6">
+                        <div class="w-10 h-10 flex items-center justify-center">
+                            <img src="assets/images/logo.png" alt="Axel Integrações" class="w-10 h-10 object-contain logo-img">
                         </div>
-                        <span class="font-semibold text-xl">Axel Integrações</span>
+                        <div>
+                            <span class="font-bold text-xl text-white">Axel Integrações</span>
+                            <div class="text-xs text-brand-green font-medium">Automação & Integração</div>
+                        </div>
                     </div>
-                    <p class="text-gray-400">
-                        Especialista em automação de processos e integração de sistemas. Transformando a forma como sua empresa trabalha.
+                    <p class="text-brand-light/80 leading-relaxed max-w-md mb-6">
+                        Especialista em automação de processos e integração de sistemas. Transformando a forma como sua empresa trabalha através de soluções inteligentes e personalizadas.
                     </p>
+                    <div class="flex space-x-4">
+                        <a href="https://wa.me/5519997330171" 
+                           target="_blank"
+                           class="w-10 h-10 bg-brand-green/20 rounded-lg flex items-center justify-center text-brand-green hover:bg-brand-green hover:text-brand-dark transition-all duration-300">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                        <a href="https://www.instagram.com/axel.integracoes" 
+                           class="w-10 h-10 bg-brand-blue/20 rounded-lg flex items-center justify-center text-brand-blue hover:bg-brand-blue hover:text-white transition-all duration-300">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="mailto:axelintegracoes@gmail.com" 
+                           class="w-10 h-10 bg-brand-light/20 rounded-lg flex items-center justify-center text-brand-light hover:bg-brand-light hover:text-brand-dark transition-all duration-300">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                        <a href="#" 
+                           class="w-10 h-10 bg-brand-light/20 rounded-lg flex items-center justify-center text-brand-light hover:bg-brand-light hover:text-brand-dark transition-all duration-300">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                    </div>
                 </div>
                 
                 <div>
-                    <h3 class="font-semibold text-lg mb-4">Serviços</h3>
-                    <ul class="space-y-2 text-gray-400">
-                        <li>Automação de Processos</li>
-                        <li>Integração de Sistemas</li>
-                        <li>Notificações Automáticas</li>
-                        <li>Assinatura Digital</li>
-                        <li>Soluções Personalizadas</li>
+                    <h3 class="font-bold text-lg mb-6 text-brand-green">Serviços</h3>
+                    <ul class="space-y-3 text-brand-light/80">
+                        <li><a href="#servicos" class="hover:text-brand-green transition-colors">Automação de Processos</a></li>
+                        <li><a href="#servicos" class="hover:text-brand-green transition-colors">Integração de Sistemas</a></li>
+                        <li><a href="#servicos" class="hover:text-brand-green transition-colors">Notificações Automáticas</a></li>
+                        <li><a href="#servicos" class="hover:text-brand-green transition-colors">Assinatura Digital</a></li>
+                        <li><a href="#servicos" class="hover:text-brand-green transition-colors">Analytics & Insights</a></li>
+                        <li><a href="#servicos" class="hover:text-brand-green transition-colors">Soluções Personalizadas</a></li>
                     </ul>
                 </div>
                 
                 <div>
-                    <h3 class="font-semibold text-lg mb-4">Contato</h3>
-                    <div class="space-y-3 text-gray-400">
-                        <a href="https://wa.me/5519999999999" 
-                           target="_blank"
-                           class="flex items-center space-x-2 hover:text-white transition-colors">
-                            <i class="fab fa-whatsapp"></i>
-                            <span>WhatsApp</span>
-                        </a>
-                        <a href="#" 
-                           class="flex items-center space-x-2 hover:text-white transition-colors">
-                            <i class="fab fa-instagram"></i>
-                            <span>Instagram</span>
-                        </a>
-                        <a href="mailto:contato@axelintegracoes.com" 
-                           class="flex items-center space-x-2 hover:text-white transition-colors">
-                            <i class="fas fa-envelope"></i>
-                            <span>E-mail</span>
-                        </a>
-                    </div>
+                    <h3 class="font-bold text-lg mb-6 text-brand-blue">Empresa</h3>
+                    <ul class="space-y-3 text-brand-light/80">
+                        <li><a href="#sobre" class="hover:text-brand-blue transition-colors">Sobre André Axel</a></li>
+                        <li><a href="#projetos" class="hover:text-brand-blue transition-colors">Cases de Sucesso</a></li>
+                        <li><a href="#plataformas" class="hover:text-brand-blue transition-colors">Plataformas</a></li>
+                    </ul>
                 </div>
             </div>
             
-            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-                <p>&copy; 2025 Axel Integrações. Todos os direitos reservados.</p>
+            <div class="border-t border-brand-light/10 mt-12 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+                    <div class="text-brand-light/60 text-sm">
+                        &copy; 2025 Axel Integrações. Todos os direitos reservados.
+                    </div>
+                </div>
             </div>
         </div>
     </footer>
 
-    <!-- JavaScript para interações -->
+    <!-- Scripts -->
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/animations.js"></script>
+    
+    <!-- Mobile Menu Script -->
     <script>
-        // Smooth scrolling para links de navegação
+        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            const isHidden = mobileMenu.classList.contains('hidden');
+            
+            if (isHidden) {
+                mobileMenu.classList.remove('hidden');
+                this.querySelector('i').classList.replace('fa-bars', 'fa-times');
+            } else {
+                mobileMenu.classList.add('hidden');
+                this.querySelector('i').classList.replace('fa-times', 'fa-bars');
+            }
+        });
+
+        // Close mobile menu when clicking on links
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', function() {
+                const mobileMenu = document.getElementById('mobile-menu');
+                const menuBtn = document.getElementById('mobile-menu-btn');
+                mobileMenu.classList.add('hidden');
+                menuBtn.querySelector('i').classList.replace('fa-times', 'fa-bars');
+            });
+        });
+
+        // Smooth scroll for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -732,77 +1025,127 @@
             });
         });
 
-        // Adicionar classe ativa na navegação baseada no scroll
+        // Update active navigation on scroll
         window.addEventListener('scroll', function() {
             const sections = document.querySelectorAll('section[id]');
-            const navLinks = document.querySelectorAll('nav a[href^="#"]');
+            const navLinks = document.querySelectorAll('.nav-link');
             
             let current = '';
             sections.forEach(section => {
-                const sectionTop = section.offsetTop;
+                const sectionTop = section.offsetTop - 100;
                 const sectionHeight = section.clientHeight;
-                if (scrollY >= (sectionTop - 200)) {
+                if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
                     current = section.getAttribute('id');
                 }
             });
 
             navLinks.forEach(link => {
-                link.classList.remove('text-blue-600');
+                link.classList.remove('text-brand-blue');
                 if (link.getAttribute('href') === `#${current}`) {
-                    link.classList.add('text-blue-600');
+                    link.classList.add('text-brand-blue');
                 }
             });
         });
 
-        // Animação de números crescendo (se quiser adicionar no futuro)
-        function animateNumber(element, start, end, duration) {
-            let startTimestamp = null;
-            const step = (timestamp) => {
-                if (!startTimestamp) startTimestamp = timestamp;
-                const progress = Math.min((timestamp - startTimestamp) / duration, 1);
-                element.innerHTML = Math.floor(progress * (end - start) + start);
-                if (progress < 1) {
-                    window.requestAnimationFrame(step);
-                }
+        // Loading animation for page
+        window.addEventListener('load', function() {
+            document.body.classList.add('loaded');
+            
+            // Trigger animations for visible elements
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
             };
-            window.requestAnimationFrame(step);
-        }
 
-        // Intersection Observer para animações
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
 
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('animate-fade-in');
-                }
+            // Observe all cards and sections
+            document.querySelectorAll('.group, section').forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(20px)';
+                el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(el);
             });
-        }, observerOptions);
+        });
 
-        // Observar elementos para animação
-        document.querySelectorAll('.card-hover').forEach(card => {
-            observer.observe(card);
+        // WhatsApp tracking
+        document.querySelectorAll('a[href*="wa.me"]').forEach(link => {
+            link.addEventListener('click', function() {
+                // Analytics tracking can be added here
+                console.log('WhatsApp link clicked:', this.href);
+            });
+        });
+
+        // Email tracking
+        document.querySelectorAll('a[href^="mailto:"]').forEach(link => {
+            link.addEventListener('click', function() {
+                // Analytics tracking can be added here
+                console.log('Email link clicked:', this.href);
+            });
         });
     </script>
 
+    <!-- Performance optimization -->
     <style>
-        .animate-fade-in {
-            animation: fadeIn 0.6s ease-out forwards;
+        /* Prevent layout shift */
+        img {
+            aspect-ratio: attr(width) / attr(height);
         }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
+        
+        /* Optimize fonts */
+        body {
+            font-display: swap;
+        }
+        
+        /* Loading state */
+        body:not(.loaded) .floating-animation {
+            animation-play-state: paused;
+        }
+        
+        /* Smooth transitions */
+        * {
+            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        /* Focus styles for accessibility */
+        a:focus, button:focus {
+            outline: 2px solid #3894A3;
+            outline-offset: 2px;
+        }
+        
+        /* Print styles */
+        @media print {
+            nav, footer, .no-print {
+                display: none !important;
             }
-            to {
-                opacity: 1;
-                transform: translateY(0);
+            
+            body {
+                background: white !important;
+                color: black !important;
             }
         }
+        
+        /* Reduce motion for accessibility */
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+            
+            .floating-animation {
+                animation: none !important;
+            }
+        }
+        
     </style>
 </body>
 </html>
+                                

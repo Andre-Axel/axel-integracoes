@@ -1,0 +1,568 @@
+/* ============================================
+   AXEL INTEGRAÇÕES - RESPONSIVIDADE
+   ============================================ */
+
+/* Mobile First Approach - Base styles for mobile */
+
+/* ============================================
+   CORREÇÕES ESPECÍFICAS PARA TÍTULOS
+   ============================================ */
+
+/* Evita quebras forçadas em todos os breakpoints */
+h1, h2, h3 {
+    word-break: normal !important;
+    overflow-wrap: break-word !important;
+    hyphens: none !important;
+}
+
+/* Remove display block de spans dentro de títulos */
+h1 span, h2 span, h3 span {
+    display: inline !important;
+}
+
+/* ============================================
+   BREAKPOINTS RESPONSIVOS
+   ============================================ */
+
+/* Extra Small devices (phones, 320px and up) */
+@media (max-width: 474px) {
+    .section-padding {
+        padding: 2rem 0;
+    }
+    
+    /* Hero section mobile - SEM SOBRESCREVER TAILWIND */
+    .hero-mobile h1 {
+        font-size: 2rem !important;
+        line-height: 1.2 !important;
+    }
+    
+    .hero-mobile .text-xl {
+        font-size: 1.125rem;
+    }
+    
+    .hero-mobile .text-lg {
+        font-size: 1rem;
+    }
+    
+    /* Navigation mobile */
+    #navbar .logo-text {
+        font-size: 0.875rem;
+    }
+    
+    /* CTA buttons mobile */
+    .cta-button {
+        padding: 0.5rem 1rem;
+        font-size: 0.875rem;
+    }
+    
+    /* Cards mobile */
+    .service-card,
+    .problem-card,
+    .project-card,
+    .platform-category {
+        padding: 1rem;
+    }
+    
+    /* Project cards mobile */
+    .project-card h3 {
+        font-size: 1.25rem;
+    }
+    
+    .project-tech {
+        gap: 0.25rem;
+    }
+    
+    .project-tech span {
+        font-size: 0.75rem;
+        padding: 0.25rem 0.5rem;
+    }
+    
+    /* Benefits section mobile */
+    .benefit-item {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+    
+    .benefit-item .w-12 {
+        margin: 0 auto;
+    }
+    
+    /* Footer mobile */
+    footer .grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        text-align: center;
+    }
+}
+
+/* Logo responsive */
+@media (max-width: 640px) {
+    .logo-img {
+        width: 1.5rem !important;
+        height: 1.5rem !important;
+    }
+}
+
+@media (min-width: 1024px) {
+    .logo-img {
+        width: 2rem !important;
+        height: 2rem !important;
+    }
+}
+
+/* Small devices (landscape phones, 475px and up) */
+@media (min-width: 475px) and (max-width: 639px) {
+    .section-padding {
+        padding: 3rem 0;
+    }
+    
+    /* Grid adjustments */
+    .problems-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .platforms-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+}
+
+/* Medium devices (tablets, 640px and up) */
+@media (min-width: 640px) and (max-width: 767px) {
+    .section-padding {
+        padding: 4rem 0;
+    }
+    
+    /* Navigation tablet */
+    #nav-menu {
+        display: none;
+    }
+    
+    /* Hero tablet */
+    #hero .grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 3rem;
+    }
+    
+    /* About section tablet */
+    #sobre .grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 3rem;
+    }
+    
+    /* Benefits tablet */
+    .benefits-section .grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+    
+    /* Projects tablet */
+    .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    /* Grid adjustments for tablets */
+    .problems-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+    
+    .platforms-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+}
+
+/* Large devices (desktops, 768px and up) */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .section-padding {
+        padding: 4.5rem 0;
+    }
+    
+    /* Navigation desktop small */
+    #nav-menu {
+        display: flex;
+        gap: 1.5rem;
+    }
+    
+    /* Grid adjustments */
+    .problems-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .platforms-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .projects-grid {
+        grid-template-columns: 1fr;
+        max-width: 4xl;
+        margin: 0 auto;
+    }
+}
+
+/* Extra large devices (large desktops, 1024px and up) */
+@media (min-width: 1024px) and (max-width: 1279px) {
+    .section-padding {
+        padding: 5rem 0;
+    }
+    
+    /* Full navigation */
+    #nav-menu {
+        display: flex;
+        gap: 2rem;
+    }
+    
+    /* Grid full layouts */
+    .services-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .platforms-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* XXL devices (larger desktops, 1280px and up) */
+@media (min-width: 1280px) {
+    .section-padding {
+        padding: 6rem 0;
+    }
+    
+    /* Larger spacing for big screens */
+    #hero .grid {
+        gap: 4rem;
+    }
+    
+    #sobre .grid {
+        gap: 4rem;
+    }
+    
+    .benefits-section .grid {
+        gap: 4rem;
+    }
+}
+
+/* Landscape orientation specific */
+@media (orientation: landscape) and (max-height: 600px) {
+    .section-padding {
+        padding: 2rem 0;
+    }
+    
+    #hero {
+        padding: 1rem 0;
+    }
+    
+    .floating-animation {
+        display: none;
+    }
+}
+
+/* High resolution displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 2dppx) {
+    /* Sharper text rendering */
+    body {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+}
+
+/* Print media queries */
+@media print {
+    .section-padding {
+        padding: 1rem 0;
+    }
+    
+    #navbar,
+    footer,
+    .no-print {
+        display: none !important;
+    }
+    
+    body {
+        font-size: 12pt;
+        line-height: 1.4;
+    }
+    
+    h1, h2, h3 {
+        page-break-after: avoid;
+    }
+    
+    .project-card,
+    .service-card {
+        page-break-inside: avoid;
+        border: 1px solid #ccc;
+        margin-bottom: 1rem;
+    }
+}
+
+/* Accessibility - Large text support */
+@media (min-width: 1px) {
+    html.large-text {
+        font-size: 120%;
+    }
+    
+    html.large-text .section-padding {
+        padding: 4rem 0;
+    }
+}
+
+/* Container max-widths for different screen sizes */
+.container-responsive {
+    width: 100%;
+    padding-right: 1rem;
+    padding-left: 1rem;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+@media (min-width: 640px) {
+    .container-responsive {
+        max-width: 640px;
+        padding-right: 1.5rem;
+        padding-left: 1.5rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .container-responsive {
+        max-width: 768px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .container-responsive {
+        max-width: 1024px;
+        padding-right: 2rem;
+        padding-left: 2rem;
+    }
+}
+
+@media (min-width: 1280px) {
+    .container-responsive {
+        max-width: 1280px;
+    }
+}
+
+@media (min-width: 1536px) {
+    .container-responsive {
+        max-width: 1536px;
+    }
+}
+
+/* Responsive typography scale */
+@media (max-width: 639px) {
+    .text-responsive-xl {
+        font-size: 1.25rem;
+        line-height: 1.75rem;
+    }
+    
+    .text-responsive-2xl {
+        font-size: 1.5rem;
+        line-height: 2rem;
+    }
+    
+    .text-responsive-4xl {
+        font-size: 2rem;
+        line-height: 2.5rem;
+    }
+}
+
+@media (min-width: 640px) {
+    .text-responsive-xl {
+        font-size: 1.25rem;
+        line-height: 1.75rem;
+    }
+    
+    .text-responsive-2xl {
+        font-size: 1.875rem;
+        line-height: 2.25rem;
+    }
+    
+    .text-responsive-4xl {
+        font-size: 3rem;
+        line-height: 1;
+    }
+}
+
+@media (min-width: 1024px) {
+    .text-responsive-xl {
+        font-size: 1.5rem;
+        line-height: 2rem;
+    }
+    
+    .text-responsive-2xl {
+        font-size: 2.25rem;
+        line-height: 2.5rem;
+    }
+    
+    .text-responsive-4xl {
+        font-size: 4rem;
+        line-height: 1;
+    }
+}
+
+/* Responsive spacing utilities */
+.space-responsive-x > * + * {
+    margin-left: 0.5rem;
+}
+
+@media (min-width: 640px) {
+    .space-responsive-x > * + * {
+        margin-left: 1rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .space-responsive-x > * + * {
+        margin-left: 2rem;
+    }
+}
+
+.space-responsive-y > * + * {
+    margin-top: 1rem;
+}
+
+@media (min-width: 640px) {
+    .space-responsive-y > * + * {
+        margin-top: 1.5rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .space-responsive-y > * + * {
+        margin-top: 2rem;
+    }
+}
+
+/* Responsive grid gaps */
+.gap-responsive {
+    gap: 1rem;
+}
+
+@media (min-width: 640px) {
+    .gap-responsive {
+        gap: 1.5rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .gap-responsive {
+        gap: 2rem;
+    }
+}
+
+/* Mobile navigation */
+@media (max-width: 767px) {
+    .mobile-menu {
+        display: none;
+        position: fixed;
+        top: 5rem;
+        left: 0;
+        right: 0;
+        background: white;
+        border-top: 1px solid #e5e7eb;
+        padding: 1rem;
+        z-index: 40;
+        box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+    }
+    
+    .mobile-menu.active {
+        display: block;
+    }
+    
+    .mobile-menu a {
+        display: block;
+        padding: 0.75rem 0;
+        border-bottom: 1px solid #f3f4f6;
+        color: #2F414F;
+        text-decoration: none;
+        font-weight: 500;
+    }
+    
+    .mobile-menu a:hover {
+        color: #3894A3;
+    }
+    
+    .hamburger {
+        display: block;
+        cursor: pointer;
+    }
+    
+    .hamburger span {
+        display: block;
+        width: 25px;
+        height: 3px;
+        background: #2F414F;
+        margin: 5px 0;
+        transition: 0.3s;
+    }
+    
+    .hamburger.active span:nth-child(1) {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+    
+    .hamburger.active span:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .hamburger.active span:nth-child(3) {
+        transform: rotate(45deg) translate(-5px, -6px);
+    }
+}
+
+@media (min-width: 768px) {
+    .mobile-menu {
+        display: none !important;
+    }
+    
+    .hamburger {
+        display: none !important;
+    }
+}
+
+/* ============================================
+   CORREÇÕES ADICIONAIS PARA TAILWIND
+   ============================================ */
+
+/* Garante que as classes Tailwind não sejam sobrescritas */
+.text-4xl, .text-5xl, .text-6xl, .text-7xl,
+.sm\\:text-5xl, .lg\\:text-7xl {
+    word-break: normal !important;
+    overflow-wrap: break-word !important;
+    hyphens: none !important;
+}
+
+/* Força comportamento inline para spans em títulos */
+.text-4xl span, .text-5xl span, .text-6xl span, .text-7xl span,
+.sm\\:text-5xl span, .lg\\:text-7xl span {
+    display: inline !important;
+}
+
+/* Remove quebras forçadas das classes de cor */
+.text-brand-green, .text-brand-blue, .text-brand-dark {
+    display: inline !important;
+}

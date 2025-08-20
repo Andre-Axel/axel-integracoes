@@ -1,0 +1,468 @@
+/* ============================================
+   AXEL INTEGRAÇÕES - ESTILOS PRINCIPAIS
+   ============================================ */
+
+/* Font Import */
+* {
+    font-family: 'Inter', sans-serif;
+}
+
+/* Variables CSS - Nova Paleta Atualizada */
+:root {
+    --color-brand-dark: #2F414F;      /* Primary Dark */
+    --color-brand-blue: #3894A3;      /* Primary Blue */
+    --color-brand-light: #F1F1EF;     /* Background Light */
+    --color-brand-green: #C7DAD4;     /* Accent Green */
+    
+    --color-gray-50: #f9fafb;
+    --color-gray-100: #f3f4f6;
+    --color-gray-600: #4b5563;
+    --color-gray-900: #111827;
+    
+    --transition-default: all 0.3s ease;
+    --shadow-card: 0 4px 6px -1px rgba(47, 65, 79, 0.1), 0 2px 4px -1px rgba(47, 65, 79, 0.06);
+    --shadow-card-hover: 0 20px 25px -5px rgba(47, 65, 79, 0.1), 0 10px 10px -5px rgba(47, 65, 79, 0.04);
+    
+    --border-radius-lg: 0.75rem;
+    --border-radius-xl: 1rem;
+    --border-radius-2xl: 1.5rem;
+}
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Section padding utility */
+.section-padding {
+    padding: 5rem 0;
+}
+
+/* Gradient backgrounds */
+.gradient-bg {
+    background: linear-gradient(135deg, var(--color-brand-dark) 0%, var(--color-brand-blue) 100%);
+}
+
+.gradient-text {
+    background: linear-gradient(135deg, var(--color-brand-dark), var(--color-brand-blue));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* ============================================
+   CORREÇÃO DE TÍTULOS H1 E H2
+   ============================================ */
+
+/* Controle global de títulos - PRIORIDADE MÁXIMA */
+h1, h2, h3, h4, h5, h6 {
+    word-break: normal !important;
+    overflow-wrap: break-word !important;
+    hyphens: none !important;
+    line-height: 1.2 !important;
+}
+
+/* Remoção de quebras forçadas em spans */
+h1 span, h2 span, h3 span {
+    display: inline !important;
+    word-break: keep-all !important;
+}
+
+/* Títulos responsivos - com !important para garantir aplicação */
+@media (max-width: 480px) {
+    h1 { 
+        font-size: 2rem !important; 
+        line-height: 1.1 !important;
+    }
+    h2 { 
+        font-size: 1.75rem !important; 
+        line-height: 1.2 !important;
+    }
+    h3 { 
+        font-size: 1.5rem !important; 
+    }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+    h1 { 
+        font-size: 2.5rem !important; 
+        line-height: 1.1 !important;
+    }
+    h2 { 
+        font-size: 2rem !important; 
+        line-height: 1.2 !important;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    h1 { 
+        font-size: 3.5rem !important; 
+        line-height: 1.1 !important;
+    }
+    h2 { 
+        font-size: 2.5rem !important; 
+        line-height: 1.2 !important;
+    }
+}
+
+/* ============================================
+   COMPONENTES E INTERAÇÕES
+   ============================================ */
+
+/* Card components */
+.card-hover {
+    transition: var(--transition-default);
+    box-shadow: var(--shadow-card);
+}
+
+.card-hover:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-card-hover);
+}
+
+/* Button components */
+.btn-primary {
+    transition: var(--transition-default);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    border-radius: var(--border-radius-lg);
+}
+
+.btn-primary:hover {
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-card);
+}
+
+.btn-secondary {
+    transition: var(--transition-default);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    border-radius: var(--border-radius-lg);
+}
+
+.cta-button {
+    transition: var(--transition-default);
+}
+
+.cta-button:hover {
+    transform: scale(1.05);
+}
+
+/* Animations */
+.floating-animation {
+    animation: floating 3s ease-in-out infinite;
+}
+
+@keyframes floating {
+    0%, 100% { 
+        transform: translateY(0); 
+    }
+    50% { 
+        transform: translateY(-10px); 
+    }
+}
+
+.animate-fade-in {
+    animation: fadeIn 0.6s ease-out forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Logo styling */
+.logo-img {
+    transition: transform 0.3s ease;
+}
+
+.logo-img:hover {
+    transform: scale(1.1);
+}
+
+/* Navigation specific styles */
+#navbar {
+    backdrop-filter: blur(10px);
+    background-color: rgba(255, 255, 255, 0.95);
+}
+
+.nav-link {
+    position: relative;
+    transition: var(--transition-default);
+}
+
+.nav-link:hover {
+    color: var(--color-brand-blue);
+}
+
+.nav-link.active {
+    color: var(--color-brand-blue);
+}
+
+.nav-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--color-brand-blue);
+    border-radius: 1px;
+}
+
+/* Hero section specific */
+.hero-content h1 {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* About section */
+.profile-image .rounded-full {
+    transition: var(--transition-default);
+}
+
+.profile-image:hover .rounded-full {
+    transform: scale(1.05);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+/* Service cards */
+.service-card {
+    border: 1px solid transparent;
+    transition: var(--transition-default);
+}
+
+.service-card:hover {
+    border-color: rgba(56, 148, 163, 0.2);
+    transform: translateY(-3px);
+}
+
+/* Problem cards */
+.problem-card {
+    border-left: 4px solid transparent;
+    transition: var(--transition-default);
+}
+
+.problem-card:hover {
+    border-left-color: var(--color-brand-blue);
+}
+
+/* Project cards */
+.project-card {
+    border: 1px solid transparent;
+    transition: var(--transition-default);
+    position: relative;
+    overflow: hidden;
+}
+
+.project-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--color-brand-blue), transparent);
+    transition: left 0.5s ease;
+}
+
+.project-card:hover::before {
+    left: 100%;
+}
+
+.project-tech span {
+    transition: var(--transition-default);
+}
+
+.project-tech span:hover {
+    transform: scale(1.1);
+}
+
+/* Platform categories */
+.platform-category {
+    border-top: 3px solid transparent;
+    transition: var(--transition-default);
+}
+
+.platform-category:hover {
+    border-top-color: var(--color-brand-blue);
+    transform: translateY(-2px);
+}
+
+/* Benefits section */
+.benefit-item {
+    opacity: 0;
+    transform: translateX(-20px);
+    transition: var(--transition-default);
+}
+
+.benefit-item.animate {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.benefits-summary {
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* CTA section buttons */
+.cta-whatsapp:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 25px rgba(56, 148, 163, 0.3);
+}
+
+.cta-form:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.cta-instagram:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 25px rgba(168, 85, 247, 0.3);
+}
+
+/* Footer */
+footer a {
+    transition: var(--transition-default);
+}
+
+footer a:hover {
+    color: var(--color-brand-blue);
+}
+
+/* Scroll indicator */
+.scroll-indicator {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    background: linear-gradient(90deg, var(--color-brand-dark), var(--color-brand-blue));
+    z-index: 9999;
+    transition: width 0.1s ease;
+}
+
+/* Loading animation */
+.loading {
+    opacity: 0;
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Intersection Observer animations */
+.fade-in-section {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease;
+}
+
+.fade-in-section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--color-gray-100);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--color-brand-dark);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--color-brand-blue);
+}
+
+/* Print styles */
+@media print {
+    .no-print {
+        display: none !important;
+    }
+    
+    body {
+        background: white !important;
+        color: black !important;
+    }
+    
+    .gradient-bg {
+        background: white !important;
+        color: black !important;
+    }
+}
+
+/* Accessibility improvements */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+    
+    .floating-animation {
+        animation: none;
+    }
+}
+
+/* Focus styles for accessibility */
+button:focus,
+a:focus {
+    outline: 2px solid var(--color-brand-blue);
+    outline-offset: 2px;
+}
+
+/* Dark mode support (future enhancement) */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --color-text-primary: #f9fafb;
+        --color-text-secondary: #d1d5db;
+        --color-bg-primary: #111827;
+        --color-bg-secondary: #1f2937;
+    }
+}
+
+/* Performance optimizations */
+.card-hover,
+.service-card,
+.problem-card,
+.project-card,
+.platform-category {
+    will-change: transform;
+    backface-visibility: hidden;
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+    .gradient-text {
+        -webkit-text-fill-color: var(--color-brand-dark);
+        background: none;
+    }
+    
+    .card-hover {
+        border: 2px solid var(--color-brand-dark);
+    }
+}
