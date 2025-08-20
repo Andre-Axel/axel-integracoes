@@ -252,10 +252,10 @@ class AxelApp {
                 this.handleInstagramClick(instagramBtn, e);
             }
 
-            const formBtn = e.target.closest('.cta-form');
-            if (formBtn) {
-                this.handleFormClick(formBtn, e);
-            }
+            //const formBtn = e.target.closest('.cta-form');
+            //if (formBtn) {
+            //   this.handleFormClick(formBtn, e);
+            //}
         });
 
         // Update WhatsApp links with context
@@ -281,11 +281,10 @@ class AxelApp {
         this.trackEvent('Contact', 'Instagram', 'Click');
     }
 
-    handleFormClick(button, event) {
-        event.preventDefault();
-        this.showNotification('Formulário em desenvolvimento. Entre em contato pelo WhatsApp!');
-        this.trackEvent('Contact', 'Form', 'Click');
-    }
+   // handleFormClick(button, event) {
+    //    window.open('forms.gle/1Bd6AnhzhsCyZ7zL7S', '_blank');
+//this.trackEvent('Contact', 'Form', 'Click');
+   // }
 
     /**
      * Intersection Observer moderno
