@@ -1,8 +1,6 @@
 /**
- * AXEL INTEGRAÇÕES - SISTEMA DE ANIMAÇÕES
+ * AXEL INTEGRAÇÕES - SISTEMA DE ANIMAÇÕES CORRIGIDO
  * Arquivo: assets/js/animations.js
- * 
- * Sistema completo de animações de scroll e interações
  */
 
 class AxelAnimations {
@@ -26,12 +24,10 @@ class AxelAnimations {
         this.initHoverEffects();
         this.initTypingEffects();
         this.setupStaggerAnimations();
-        
-        console.log('Axel Animations - Sistema inicializado');
     }
 
     /**
-     * Configuração das animações de scroll
+     * Configuração das animações de scroll - CORRIGIDO
      */
     initScrollAnimations() {
         const observerOptions = {
@@ -39,20 +35,20 @@ class AxelAnimations {
             rootMargin: '0px 0px -50px 0px'
         };
 
+        // CORREÇÃO: Usar arrow function para preservar 'this'
         const scrollObserver = new IntersectionObserver((entries) => {
-            entries.forEach((entry, index) => {
+            entries.forEach((entry) => {
                 if (entry.isIntersecting) {
                     const delay = parseInt(entry.target.dataset.delay) || 0;
                     
                     setTimeout(() => {
                         entry.target.classList.add('visible');
                         
-                        // Trigger específico para cada tipo de animação
+                        // CORREÇÃO: Chamar método corretamente
                         this.handleSpecialAnimations(entry.target);
                         
                     }, delay);
                     
-                    // Para de observar após animar (performance)
                     scrollObserver.unobserve(entry.target);
                 }
             });
@@ -65,11 +61,37 @@ class AxelAnimations {
     }
 
     /**
-     * Manipula animações especiais baseadas em classes
+     * NOVO: Sistema dedicado para contadores
+     */
+    initCounterAnimations() {
+        const counters = document.querySelectorAll('.counter');
+        
+        if (counters.length === 0) return;
+
+        const counterObserver = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting && entry.target.classList.contains('counter')) {
+                    this.animateCounter(entry.target);
+                    counterObserver.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        });
+
+        counters.forEach(counter => {
+            counterObserver.observe(counter);
+        });
+    }
+
+    /**
+     * Manipula animações especiais - CORRIGIDO
      */
     handleSpecialAnimations(element) {
         if (element.classList.contains('counter')) {
-            this.animateCounter(element);
+            // Counter já tem seu próprio observer, pular aqui
+            return;
         }
         
         if (element.classList.contains('progress-bar')) {
@@ -86,7 +108,7 @@ class AxelAnimations {
     }
 
     /**
-     * Animação de contadores numéricos
+     * Animação de contadores - CORRIGIDO E MELHORADO
      */
     animateCounter(element) {
         const target = parseInt(element.dataset.target || element.textContent.replace(/\D/g, ''));
@@ -95,6 +117,10 @@ class AxelAnimations {
         const prefix = element.dataset.prefix || '';
         
         if (isNaN(target)) return;
+        
+        // Prevenir re-execução
+        if (element.dataset.animated === 'true') return;
+        element.dataset.animated = 'true';
         
         const increment = target / (duration / 16);
         let current = 0;
@@ -137,7 +163,6 @@ class AxelAnimations {
             
             if (i > text.length) {
                 clearInterval(timer);
-                // Remove cursor após terminar
                 setTimeout(() => {
                     element.style.borderRight = 'none';
                 }, 1000);
@@ -153,7 +178,7 @@ class AxelAnimations {
     }
 
     /**
-     * Configuração de animações escalonadas (stagger)
+     * Configuração de animações escalonadas
      */
     setupStaggerAnimations() {
         const staggerGroups = document.querySelectorAll('[data-stagger-group]');
@@ -170,10 +195,10 @@ class AxelAnimations {
     }
 
     /**
-     * Sistema de parallax suave
+     * Sistema de parallax
      */
     initParallax() {
-        if (window.innerWidth <= 768) return; // Desabilita no mobile
+        if (window.innerWidth <= 768) return;
         
         let ticking = false;
         
@@ -184,7 +209,6 @@ class AxelAnimations {
             parallaxElements.forEach(element => {
                 const rect = element.getBoundingClientRect();
                 
-                // Só anima se estiver visível
                 if (rect.bottom >= 0 && rect.top <= window.innerHeight) {
                     let speed = 0.5;
                     
@@ -209,10 +233,9 @@ class AxelAnimations {
     }
 
     /**
-     * Efeitos de hover melhorados
+     * Efeitos de hover
      */
     initHoverEffects() {
-        // Cards com animação
         document.querySelectorAll('.card-animate').forEach(card => {
             card.addEventListener('mouseenter', () => {
                 this.animateCardHover(card, true);
@@ -223,7 +246,6 @@ class AxelAnimations {
             });
         });
 
-        // Botões com efeito shimmer
         document.querySelectorAll('.button-animate').forEach(button => {
             button.addEventListener('mouseenter', () => {
                 this.triggerShimmerEffect(button);
@@ -231,9 +253,6 @@ class AxelAnimations {
         });
     }
 
-    /**
-     * Animação de hover para cards
-     */
     animateCardHover(card, isHover) {
         if (isHover) {
             card.style.transform = 'translateY(-8px) scale(1.02)';
@@ -244,9 +263,6 @@ class AxelAnimations {
         }
     }
 
-    /**
-     * Efeito shimmer em botões
-     */
     triggerShimmerEffect(button) {
         const shimmer = button.querySelector('.shimmer') || document.createElement('div');
         shimmer.className = 'shimmer';
@@ -297,8 +313,6 @@ class AxelAnimations {
     /**
      * Utilitários públicos
      */
-    
-    // Anima um elemento específico
     animateElement(selector, animationClass = 'fade-up') {
         const element = document.querySelector(selector);
         if (element) {
@@ -307,7 +321,6 @@ class AxelAnimations {
         }
     }
 
-    // Remove animação de um elemento
     removeAnimation(selector) {
         const element = document.querySelector(selector);
         if (element) {
@@ -315,7 +328,6 @@ class AxelAnimations {
         }
     }
 
-    // Trigger manual de contador
     triggerCounter(selector) {
         const element = document.querySelector(selector);
         if (element && element.classList.contains('counter')) {
@@ -323,7 +335,6 @@ class AxelAnimations {
         }
     }
 
-    // Adiciona delay a um elemento
     addDelay(selector, delay) {
         const element = document.querySelector(selector);
         if (element) {
@@ -331,27 +342,23 @@ class AxelAnimations {
         }
     }
 
-    // Reset de todas as animações (útil para SPAs)
     resetAnimations() {
         document.querySelectorAll('.scroll-animate.visible').forEach(el => {
             el.classList.remove('visible');
         });
         
-        // Re-observa elementos
         this.initScrollAnimations();
+        this.initCounterAnimations();
     }
 }
 
 /**
  * Funções utilitárias globais
  */
-
-// Função para detectar se animações devem ser reduzidas
 function prefersReducedMotion() {
     return window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 }
 
-// Função para adicionar animação a elemento específico
 function addScrollAnimation(element, animationType = 'fade-up', delay = 0) {
     if (typeof element === 'string') {
         element = document.querySelector(element);
@@ -365,7 +372,6 @@ function addScrollAnimation(element, animationType = 'fade-up', delay = 0) {
     }
 }
 
-// Função para criar animação de stagger em grupo
 function createStaggerGroup(selector, options = {}) {
     const container = document.querySelector(selector);
     if (!container) return;
@@ -384,7 +390,6 @@ function createStaggerGroup(selector, options = {}) {
     });
 }
 
-// Função para adicionar parallax
 function addParallax(selector, speed = 0.5) {
     const elements = document.querySelectorAll(selector);
     elements.forEach(el => {
@@ -398,41 +403,15 @@ function addParallax(selector, speed = 0.5) {
 }
 
 /**
- * Inicialização automática
+ * Inicialização
  */
-
-// Verifica se animações devem ser desabilitadas
 if (prefersReducedMotion()) {
     document.documentElement.style.setProperty('--animation-duration', '0ms');
-    console.log('Axel Animations - Movimento reduzido detectado, animações desabilitadas');
 } else {
-    // Inicializa o sistema de animações
     const axelAnimations = new AxelAnimations();
-    
-    // Torna disponível globalmente para uso manual
     window.AxelAnimations = axelAnimations;
 }
 
-/**
- * Configurações adicionais
- */
-
-// Performance: Limita FPS em dispositivos de baixa performance
-let lastFrameTime = 0;
-const targetFPS = 60;
-const frameInterval = 1000 / targetFPS;
-
-function throttleAnimation(callback) {
-    return function(...args) {
-        const currentTime = Date.now();
-        if (currentTime - lastFrameTime >= frameInterval) {
-            callback.apply(this, args);
-            lastFrameTime = currentTime;
-        }
-    };
-}
-
-// Export para uso em módulos ES6
 if (typeof module !== 'undefined' && module.exports) {
     module.exports = { AxelAnimations, addScrollAnimation, createStaggerGroup, addParallax };
 }
