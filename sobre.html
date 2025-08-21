@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sobre André Axel - Especialista em Automação | Axel Integrações</title>
-    <meta name="description" content="Conheça André Axel, bacharel em Ciência da Computação com mais de 5 anos de experiência em automação de processos e integração de sistemas via APIs.">
+    <meta name="description" content="Conheça André Axel, bacharel em Ciência da Computação com experiência em automação de processos e integração de sistemas via APIs.">
     
     <!-- Favicon -->
     <link rel="icon" type="image/png" sizes="32x32" href="assets/images/ICONE2.png">
@@ -46,27 +46,6 @@
             scroll-behavior: smooth;
         }
         
-        /* Animações sutis */
-        .fade-in {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: all 0.6s ease;
-        }
-        
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
-        .card-hover {
-            transition: all 0.3s ease;
-        }
-        
-        .card-hover:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 20px 25px -5px rgba(47, 65, 79, 0.1);
-        }
-        
         /* Navegação ativa */
         .nav-active {
             color: #3894A3 !important;
@@ -106,7 +85,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16 sm:h-20">
                 <!-- Logo -->
-                <div class="flex items-center space-x-3">
+                <div class="flex items-center space-x-3 scroll-animate fade-right" data-delay="100">
                     <div class="w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center">
                         <img src="assets/images/ICONE2.png" alt="Axel Integrações" class="w-full h-full object-contain">
                     </div>
@@ -117,7 +96,7 @@
                 </div>
                 
                 <!-- Desktop Menu -->
-                <div class="hidden md:flex items-center space-x-8">
+                <div class="hidden md:flex items-center space-x-8 scroll-animate fade-down" data-delay="200">
                     <a href="index.html" class="text-brand-dark/80 hover:text-brand-blue px-3 py-2 font-medium transition-colors">Início</a>
                     <a href="sobre.html" class="nav-active px-3 py-2 font-medium transition-colors">Sobre</a>
                     <a href="projetos.html" class="text-brand-dark/80 hover:text-brand-blue px-3 py-2 font-medium transition-colors">Projetos</a>
@@ -128,7 +107,7 @@
                 <div class="flex items-center space-x-4">
                     <a href="https://wa.me/5519997330171?text=Olá! Gostaria de saber mais sobre automação de processos." 
                        target="_blank" 
-                       class="bg-brand-blue hover:bg-brand-blue/90 text-white px-4 py-2 sm:px-6 sm:py-3 rounded-xl font-semibold transition-all duration-300 flex items-center space-x-2 shadow-lg hover:shadow-xl">
+                       class="bg-brand-blue hover:bg-brand-blue/90 text-white px-4 py-2 sm:px-6 sm:py-3 rounded-xl font-semibold transition-all duration-300 flex items-center space-x-2 shadow-lg hover:shadow-xl button-animate pulse scroll-animate scale-in" data-delay="300">
                         <i class="fab fa-whatsapp text-lg"></i>
                         <span class="hidden sm:inline">Conversar</span>
                     </a>
@@ -156,13 +135,13 @@
     <section class="pt-20 pb-12 sm:pt-24 sm:pb-16 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12">
-                <div class="inline-flex items-center bg-brand-green/20 text-brand-dark rounded-full px-4 py-2 text-sm font-medium mb-6">
+                <div class="inline-flex items-center bg-brand-green/20 text-brand-dark rounded-full px-4 py-2 text-sm font-medium mb-6 scroll-animate fade-up" data-delay="200">
                     Sobre o especialista
                 </div>
-                <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-brand-dark mb-4">
+                <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-brand-dark mb-4 scroll-animate fade-up hero-title" data-delay="400">
                     André Axel
                 </h1>
-                <p class="text-lg sm:text-xl text-brand-blue font-semibold mb-8">
+                <p class="text-lg sm:text-xl text-brand-blue font-semibold mb-8 scroll-animate fade-up" data-delay="600">
                     Especialista em Automação & Integração de Sistemas
                 </p>
             </div>
@@ -174,28 +153,28 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
                 <!-- Foto e Info Principal -->
-                <div class="text-center lg:text-left">
+                <div class="text-center lg:text-left scroll-animate fade-right" data-delay="200">
                     <div class="relative inline-block mb-8">
-                        <div class="w-64 h-64 sm:w-80 sm:h-80 mx-auto bg-gradient-to-br from-brand-green to-brand-blue rounded-3xl overflow-hidden shadow-2xl">
+                        <div class="w-64 h-64 sm:w-80 sm:h-80 mx-auto bg-gradient-to-br from-brand-green to-brand-blue rounded-3xl overflow-hidden shadow-2xl float">
                             <div class="w-full h-full bg-gradient-to-br from-brand-blue to-brand-dark flex items-center justify-center">
-                                <span class="text-6xl sm:text-8xl text-white font-bold">AA</span>
+                                <img src="assets/images/ax.jfif">
                             </div>
                         </div>
-                        <div class="absolute -bottom-4 -right-4 bg-brand-green rounded-2xl p-4 shadow-lg">
+                        <div class="absolute -bottom-4 -right-4 bg-brand-green rounded-2xl p-4 shadow-lg bounce-in">
                             <i class="fas fa-code text-2xl text-brand-dark"></i>
                         </div>
                     </div>
                 </div>
                 
                 <!-- Informações do Perfil -->
-                <div class="space-y-8">
+                <div class="space-y-8 scroll-animate fade-left" data-delay="400">
                     <div>
                         <h2 class="text-2xl sm:text-3xl font-bold text-brand-dark mb-6">Perfil Profissional</h2>
                         
-                        <div class="space-y-6 text-lg text-brand-dark/80 leading-relaxed">
-                            <div class="bg-white p-6 rounded-2xl shadow-md border border-brand-green/10">
+                        <div class="space-y-6 text-lg text-brand-dark/80 leading-relaxed" data-stagger-group data-stagger-delay="150">
+                            <div class="bg-white p-6 rounded-2xl shadow-md border border-brand-green/10 card-animate scroll-animate fade-up stagger-item">
                                 <div class="flex items-center mb-4">
-                                    <div class="w-12 h-12 bg-brand-blue/20 rounded-xl flex items-center justify-center mr-4">
+                                    <div class="w-12 h-12 bg-brand-blue/20 rounded-xl flex items-center justify-center mr-4 bounce-in">
                                         <i class="fas fa-graduation-cap text-brand-blue text-xl"></i>
                                     </div>
                                     <div>
@@ -205,21 +184,21 @@
                                 </div>
                             </div>
                             
-                            <div class="bg-white p-6 rounded-2xl shadow-md border border-brand-green/10">
+                            <div class="bg-white p-6 rounded-2xl shadow-md border border-brand-green/10 card-animate scroll-animate fade-up stagger-item">
                                 <div class="flex items-center mb-4">
-                                    <div class="w-12 h-12 bg-brand-green/20 rounded-xl flex items-center justify-center mr-4">
+                                    <div class="w-12 h-12 bg-brand-green/20 rounded-xl flex items-center justify-center mr-4 bounce-in">
                                         <i class="fas fa-clock text-brand-green text-xl"></i>
                                     </div>
                                     <div>
                                         <h3 class="font-semibold text-brand-dark">Experiência</h3>
-                                        <p class="text-brand-dark/60">Mais de 5 anos em automação de processos</p>
+                                        <p class="text-brand-dark/60">Automação de processos e Chatbot</p>
                                     </div>
                                 </div>
                             </div>
                             
-                            <div class="bg-white p-6 rounded-2xl shadow-md border border-brand-green/10">
+                            <div class="bg-white p-6 rounded-2xl shadow-md border border-brand-green/10 card-animate scroll-animate fade-up stagger-item">
                                 <div class="flex items-center mb-4">
-                                    <div class="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center mr-4">
+                                    <div class="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center mr-4 bounce-in">
                                         <i class="fas fa-rocket text-purple-600 text-xl"></i>
                                     </div>
                                     <div>
@@ -231,7 +210,7 @@
                         </div>
                     </div>
                     
-                    <div class="bg-gradient-to-r from-brand-blue to-brand-dark text-white p-8 rounded-3xl">
+                    <div class="bg-gradient-to-r from-brand-blue to-brand-dark text-white p-8 rounded-3xl scroll-animate scale-in" data-delay="800">
                         <h3 class="text-xl font-bold mb-4">Missão</h3>
                         <p class="text-lg leading-relaxed">
                             Ajudar empresas a <strong>otimizar operações</strong>, <strong>reduzir erros</strong> e <strong>aumentar produtividade</strong> 
@@ -247,34 +226,34 @@
     <section class="py-16 sm:py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <h2 class="text-3xl sm:text-4xl font-bold text-brand-dark mb-6">
+                <h2 class="text-3xl sm:text-4xl font-bold text-brand-dark mb-6 scroll-animate fade-up" data-delay="200">
                     Experiência & <span class="text-brand-blue">Competências</span>
                 </h2>
-                <p class="text-lg text-brand-dark/70 max-w-3xl mx-auto">
-                    Anos de experiência prática em automação e integração, desenvolvendo soluções que realmente funcionam.
+                <p class="text-lg text-brand-dark/70 max-w-3xl mx-auto scroll-animate fade-up" data-delay="400">
+                    Experiência prática em automação e integração, desenvolvendo soluções que realmente funcionam.
                 </p>
             </div>
             
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" data-stagger-group data-stagger-delay="200">
                 <!-- Competência 1 -->
-                <div class="card-hover bg-gradient-to-br from-brand-blue/10 to-brand-blue/20 rounded-2xl p-8 border border-brand-blue/20">
-                    <div class="w-16 h-16 bg-brand-blue rounded-2xl flex items-center justify-center mb-6">
+                <div class="card-animate bg-gradient-to-br from-brand-blue/10 to-brand-blue/20 rounded-2xl p-8 border border-brand-blue/20 scroll-animate fade-up stagger-item">
+                    <div class="w-16 h-16 bg-brand-blue rounded-2xl flex items-center justify-center mb-6 bounce-in">
                         <i class="fas fa-code text-2xl text-white"></i>
                     </div>
                     <h3 class="text-xl font-bold text-brand-dark mb-4">Desenvolvimento de APIs</h3>
                     <p class="text-brand-dark/70 leading-relaxed mb-4">
                         Criação e integração de APIs personalizadas para conectar sistemas diversos de forma eficiente.
                     </p>
-                    <div class="space-y-2">
-                        <div class="flex items-center text-sm text-brand-blue">
+                    <div class="space-y-2" data-stagger-group data-stagger-delay="100">
+                        <div class="flex items-center text-sm text-brand-blue scroll-animate fade-left stagger-item">
                             <i class="fas fa-check-circle mr-2"></i>
                             REST APIs
                         </div>
-                        <div class="flex items-center text-sm text-brand-blue">
+                        <div class="flex items-center text-sm text-brand-blue scroll-animate fade-left stagger-item">
                             <i class="fas fa-check-circle mr-2"></i>
                             Webhooks
                         </div>
-                        <div class="flex items-center text-sm text-brand-blue">
+                        <div class="flex items-center text-sm text-brand-blue scroll-animate fade-left stagger-item">
                             <i class="fas fa-check-circle mr-2"></i>
                             OAuth & Autenticação
                         </div>
@@ -282,24 +261,24 @@
                 </div>
                 
                 <!-- Competência 2 -->
-                <div class="card-hover bg-gradient-to-br from-brand-green/10 to-brand-green/20 rounded-2xl p-8 border border-brand-green/20">
-                    <div class="w-16 h-16 bg-brand-green rounded-2xl flex items-center justify-center mb-6">
+                <div class="card-animate bg-gradient-to-br from-brand-green/10 to-brand-green/20 rounded-2xl p-8 border border-brand-green/20 scroll-animate fade-up stagger-item">
+                    <div class="w-16 h-16 bg-brand-green rounded-2xl flex items-center justify-center mb-6 bounce-in">
                         <i class="fas fa-database text-2xl text-brand-dark"></i>
                     </div>
                     <h3 class="text-xl font-bold text-brand-dark mb-4">Gestão de Dados</h3>
                     <p class="text-brand-dark/70 leading-relaxed mb-4">
                         Sincronização e gestão de dados entre múltiplas plataformas mantendo integridade e consistência.
                     </p>
-                    <div class="space-y-2">
-                        <div class="flex items-center text-sm text-brand-green">
+                    <div class="space-y-2" data-stagger-group data-stagger-delay="100">
+                        <div class="flex items-center text-sm text-brand-green scroll-animate fade-left stagger-item">
                             <i class="fas fa-check-circle mr-2"></i>
-                            MySQL & PostgreSQL
+                            MySQL & Google Sheets
                         </div>
-                        <div class="flex items-center text-sm text-brand-green">
+                        <div class="flex items-center text-sm text-brand-green scroll-animate fade-left stagger-item">
                             <i class="fas fa-check-circle mr-2"></i>
                             Sincronização em Tempo Real
                         </div>
-                        <div class="flex items-center text-sm text-brand-green">
+                        <div class="flex items-center text-sm text-brand-green scroll-animate fade-left stagger-item">
                             <i class="fas fa-check-circle mr-2"></i>
                             ETL & Migração
                         </div>
@@ -307,24 +286,24 @@
                 </div>
                 
                 <!-- Competência 3 -->
-                <div class="card-hover bg-gradient-to-br from-purple-100 to-purple-200 rounded-2xl p-8 border border-purple-200">
-                    <div class="w-16 h-16 bg-purple-600 rounded-2xl flex items-center justify-center mb-6">
+                <div class="card-animate bg-gradient-to-br from-purple-100 to-purple-200 rounded-2xl p-8 border border-purple-200 scroll-animate fade-up stagger-item">
+                    <div class="w-16 h-16 bg-purple-600 rounded-2xl flex items-center justify-center mb-6 bounce-in">
                         <i class="fas fa-cogs text-2xl text-white"></i>
                     </div>
                     <h3 class="text-xl font-bold text-brand-dark mb-4">Automação de Processos</h3>
                     <p class="text-brand-dark/70 leading-relaxed mb-4">
                         Criação de fluxos automatizados que eliminam tarefas manuais e aumentam eficiência operacional.
                     </p>
-                    <div class="space-y-2">
-                        <div class="flex items-center text-sm text-purple-600">
+                    <div class="space-y-2" data-stagger-group data-stagger-delay="100">
+                        <div class="flex items-center text-sm text-purple-600 scroll-animate fade-left stagger-item">
                             <i class="fas fa-check-circle mr-2"></i>
                             Fluxos de Trabalho
                         </div>
-                        <div class="flex items-center text-sm text-purple-600">
+                        <div class="flex items-center text-sm text-purple-600 scroll-animate fade-left stagger-item">
                             <i class="fas fa-check-circle mr-2"></i>
                             Triggers Inteligentes
                         </div>
-                        <div class="flex items-center text-sm text-purple-600">
+                        <div class="flex items-center text-sm text-purple-600 scroll-animate fade-left stagger-item">
                             <i class="fas fa-check-circle mr-2"></i>
                             Validação Automática
                         </div>
@@ -334,32 +313,44 @@
             
             <!-- Principais Plataformas -->
             <div class="mt-16">
-                <h3 class="text-2xl font-bold text-brand-dark text-center mb-12">
+                <h3 class="text-2xl font-bold text-brand-dark text-center mb-12 scroll-animate fade-up" data-delay="600">
                     Principais Plataformas de Experiência
                 </h3>
                 
-                <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
-                    <div class="bg-white p-6 rounded-xl shadow-md text-center hover:shadow-lg transition-shadow">
+                <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6" data-stagger-group data-stagger-delay="150">
+                    <div class="bg-white p-6 rounded-xl shadow-md text-center hover:shadow-lg transition-shadow card-animate scroll-animate scale-in stagger-item">
                         <i class="fab fa-whatsapp text-3xl text-green-500 mb-3"></i>
                         <div class="font-medium text-brand-dark">WhatsApp</div>
                     </div>
-                    <div class="bg-white p-6 rounded-xl shadow-md text-center hover:shadow-lg transition-shadow">
+                    <div class="bg-white p-6 rounded-xl shadow-md text-center hover:shadow-lg transition-shadow card-animate scroll-animate scale-in stagger-item">
+                        <i class="fab fa-telegram text-3xl text-blue-500 mb-3"></i>
+                        <div class="font-medium text-brand-dark">Telegram</div>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-md text-center hover:shadow-lg transition-shadow card-animate scroll-animate scale-in stagger-item">
+                        <i class="fab text-3xl text-purple-500 mb-3">CL</i>
+                        <div class="font-medium text-brand-dark">ClickUp</div>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-md text-center hover:shadow-lg transition-shadow card-animate scroll-animate scale-in stagger-item">
+                        <i class="fa-solid fa-rectangle-list text-3xl text-black-500 mb-3"></i>
+                        <div class="font-medium text-brand-dark">Pipefy</div>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-md text-center hover:shadow-lg transition-shadow card-animate scroll-animate scale-in stagger-item">
                         <i class="fas fa-chart-line text-3xl text-brand-blue mb-3"></i>
                         <div class="font-medium text-brand-dark">RD Station</div>
                     </div>
-                    <div class="bg-white p-6 rounded-xl shadow-md text-center hover:shadow-lg transition-shadow">
+                    <div class="bg-white p-6 rounded-xl shadow-md text-center hover:shadow-lg transition-shadow card-animate scroll-animate scale-in stagger-item">
                         <i class="fas fa-database text-3xl text-orange-500 mb-3"></i>
                         <div class="font-medium text-brand-dark">MySQL</div>
                     </div>
-                    <div class="bg-white p-6 rounded-xl shadow-md text-center hover:shadow-lg transition-shadow">
+                    <div class="bg-white p-6 rounded-xl shadow-md text-center hover:shadow-lg transition-shadow card-animate scroll-animate scale-in stagger-item">
                         <i class="fab fa-google text-3xl text-blue-500 mb-3"></i>
                         <div class="font-medium text-brand-dark">Google APIs</div>
                     </div>
-                    <div class="bg-white p-6 rounded-xl shadow-md text-center hover:shadow-lg transition-shadow">
+                    <div class="bg-white p-6 rounded-xl shadow-md text-center hover:shadow-lg transition-shadow card-animate scroll-animate scale-in stagger-item">
                         <i class="fas fa-file-signature text-3xl text-purple-500 mb-3"></i>
                         <div class="font-medium text-brand-dark">D4Sign</div>
                     </div>
-                    <div class="bg-white p-6 rounded-xl shadow-md text-center hover:shadow-lg transition-shadow">
+                    <div class="bg-white p-6 rounded-xl shadow-md text-center hover:shadow-lg transition-shadow card-animate scroll-animate scale-in stagger-item">
                         <i class="fab fa-wordpress text-3xl text-blue-600 mb-3"></i>
                         <div class="font-medium text-brand-dark">WordPress</div>
                     </div>
@@ -372,10 +363,10 @@
     <section class="py-16 sm:py-20 bg-brand-light/50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <h2 class="text-3xl sm:text-4xl font-bold text-brand-dark mb-6">
+                <h2 class="text-3xl sm:text-4xl font-bold text-brand-dark mb-6 scroll-animate fade-up" data-delay="200">
                     Metodologia de <span class="text-brand-blue">Trabalho</span>
                 </h2>
-                <p class="text-lg text-brand-dark/70 max-w-3xl mx-auto">
+                <p class="text-lg text-brand-dark/70 max-w-3xl mx-auto scroll-animate fade-up" data-delay="400">
                     Processo estruturado e transparente para garantir resultados efetivos e duradouros.
                 </p>
             </div>
@@ -384,14 +375,14 @@
                 <!-- Timeline Line -->
                 <div class="hidden lg:block absolute left-1/2 transform -translate-x-px top-8 bottom-8 w-0.5 bg-brand-blue/30"></div>
                 
-                <div class="space-y-12">
+                <div class="space-y-12" data-stagger-group data-stagger-delay="300">
                     <!-- Etapa 1 -->
-                    <div class="lg:flex items-center">
+                    <div class="lg:flex items-center scroll-animate fade-right stagger-item">
                         <div class="lg:w-1/2 lg:pr-12">
-                            <div class="bg-white p-8 rounded-2xl shadow-lg border border-brand-blue/20 relative">
-                                <div class="hidden lg:block absolute -right-4 top-1/2 transform -translate-y-1/2 w-8 h-8 bg-brand-blue rounded-full border-4 border-white shadow-lg"></div>
+                            <div class="bg-white p-8 rounded-2xl shadow-lg border border-brand-blue/20 relative card-animate">
+                                <div class="hidden lg:block absolute -right-4 top-1/2 transform -translate-y-1/2 w-8 h-8 bg-brand-blue rounded-full border-4 border-white shadow-lg bounce-in"></div>
                                 <div class="flex items-center mb-4">
-                                    <div class="w-12 h-12 bg-brand-blue rounded-xl flex items-center justify-center mr-4">
+                                    <div class="w-12 h-12 bg-brand-blue rounded-xl flex items-center justify-center mr-4 bounce-in">
                                         <span class="text-white font-bold text-lg">1</span>
                                     </div>
                                     <h3 class="text-xl font-bold text-brand-dark">Análise e Diagnóstico</h3>
@@ -406,18 +397,18 @@
                             </div>
                         </div>
                         <div class="lg:w-1/2 lg:pl-12 mt-8 lg:mt-0">
-                            <div class="bg-brand-blue/10 p-6 rounded-xl">
+                            <div class="bg-brand-blue/10 p-6 rounded-xl scroll-animate fade-left" data-delay="300">
                                 <h4 class="font-semibold text-brand-dark mb-3">Entregáveis:</h4>
-                                <ul class="space-y-2 text-brand-dark/70">
-                                    <li class="flex items-center">
+                                <ul class="space-y-2 text-brand-dark/70" data-stagger-group data-stagger-delay="100">
+                                    <li class="flex items-center scroll-animate fade-left stagger-item">
                                         <i class="fas fa-check text-brand-blue mr-2"></i>
                                         Mapeamento de processos
                                     </li>
-                                    <li class="flex items-center">
+                                    <li class="flex items-center scroll-animate fade-left stagger-item">
                                         <i class="fas fa-check text-brand-blue mr-2"></i>
                                         Relatório de oportunidades
                                     </li>
-                                    <li class="flex items-center">
+                                    <li class="flex items-center scroll-animate fade-left stagger-item">
                                         <i class="fas fa-check text-brand-blue mr-2"></i>
                                         Proposta técnica detalhada
                                     </li>
@@ -427,12 +418,12 @@
                     </div>
                     
                     <!-- Etapa 2 -->
-                    <div class="lg:flex items-center lg:flex-row-reverse">
+                    <div class="lg:flex items-center lg:flex-row-reverse scroll-animate fade-left stagger-item">
                         <div class="lg:w-1/2 lg:pl-12">
-                            <div class="bg-white p-8 rounded-2xl shadow-lg border border-brand-green/20 relative">
-                                <div class="hidden lg:block absolute -left-4 top-1/2 transform -translate-y-1/2 w-8 h-8 bg-brand-green rounded-full border-4 border-white shadow-lg"></div>
+                            <div class="bg-white p-8 rounded-2xl shadow-lg border border-brand-green/20 relative card-animate">
+                                <div class="hidden lg:block absolute -left-4 top-1/2 transform -translate-y-1/2 w-8 h-8 bg-brand-green rounded-full border-4 border-white shadow-lg bounce-in"></div>
                                 <div class="flex items-center mb-4">
-                                    <div class="w-12 h-12 bg-brand-green rounded-xl flex items-center justify-center mr-4">
+                                    <div class="w-12 h-12 bg-brand-green rounded-xl flex items-center justify-center mr-4 bounce-in">
                                         <span class="text-brand-dark font-bold text-lg">2</span>
                                     </div>
                                     <h3 class="text-xl font-bold text-brand-dark">Desenvolvimento e Integração</h3>
@@ -447,18 +438,18 @@
                             </div>
                         </div>
                         <div class="lg:w-1/2 lg:pr-12 mt-8 lg:mt-0">
-                            <div class="bg-brand-green/10 p-6 rounded-xl">
+                            <div class="bg-brand-green/10 p-6 rounded-xl scroll-animate fade-right" data-delay="300">
                                 <h4 class="font-semibold text-brand-dark mb-3">Características:</h4>
-                                <ul class="space-y-2 text-brand-dark/70">
-                                    <li class="flex items-center">
+                                <ul class="space-y-2 text-brand-dark/70" data-stagger-group data-stagger-delay="100">
+                                    <li class="flex items-center scroll-animate fade-right stagger-item">
                                         <i class="fas fa-check text-brand-green mr-2"></i>
                                         Código limpo e documentado
                                     </li>
-                                    <li class="flex items-center">
+                                    <li class="flex items-center scroll-animate fade-right stagger-item">
                                         <i class="fas fa-check text-brand-green mr-2"></i>
                                         Testes automatizados
                                     </li>
-                                    <li class="flex items-center">
+                                    <li class="flex items-center scroll-animate fade-right stagger-item">
                                         <i class="fas fa-check text-brand-green mr-2"></i>
                                         Monitoramento em tempo real
                                     </li>
@@ -468,18 +459,18 @@
                     </div>
                     
                     <!-- Etapa 3 -->
-                    <div class="lg:flex items-center">
+                    <div class="lg:flex items-center scroll-animate fade-right stagger-item">
                         <div class="lg:w-1/2 lg:pr-12">
-                            <div class="bg-white p-8 rounded-2xl shadow-lg border border-purple-200 relative">
-                                <div class="hidden lg:block absolute -right-4 top-1/2 transform -translate-y-1/2 w-8 h-8 bg-purple-600 rounded-full border-4 border-white shadow-lg"></div>
+                            <div class="bg-white p-8 rounded-2xl shadow-lg border border-purple-200 relative card-animate">
+                                <div class="hidden lg:block absolute -right-4 top-1/2 transform -translate-y-1/2 w-8 h-8 bg-purple-600 rounded-full border-4 border-white shadow-lg bounce-in"></div>
                                 <div class="flex items-center mb-4">
-                                    <div class="w-12 h-12 bg-purple-600 rounded-xl flex items-center justify-center mr-4">
+                                    <div class="w-12 h-12 bg-purple-600 rounded-xl flex items-center justify-center mr-4 bounce-in">
                                         <span class="text-white font-bold text-lg">3</span>
                                     </div>
-                                    <h3 class="text-xl font-bold text-brand-dark">Implementação e Treinamento</h3>
+                                    <h3 class="text-xl font-bold text-brand-dark">Implementação</h3>
                                 </div>
                                 <p class="text-brand-dark/70 leading-relaxed mb-4">
-                                    Deploy seguro em ambiente de produção com treinamento da equipe. 
+                                    Deploy seguro em ambiente de produção. 
                                     Acompanhamento próximo nas primeiras semanas para garantir estabilidade.
                                 </p>
                                 <div class="text-sm text-purple-600 font-medium">
@@ -488,20 +479,16 @@
                             </div>
                         </div>
                         <div class="lg:w-1/2 lg:pl-12 mt-8 lg:mt-0">
-                            <div class="bg-purple-50 p-6 rounded-xl">
+                            <div class="bg-purple-50 p-6 rounded-xl scroll-animate fade-left" data-delay="300">
                                 <h4 class="font-semibold text-brand-dark mb-3">Suporte incluso:</h4>
-                                <ul class="space-y-2 text-brand-dark/70">
-                                    <li class="flex items-center">
+                                <ul class="space-y-2 text-brand-dark/70" data-stagger-group data-stagger-delay="100">
+                                    <li class="flex items-center scroll-animate fade-left stagger-item">
                                         <i class="fas fa-check text-purple-600 mr-2"></i>
                                         30 dias de suporte gratuito
                                     </li>
-                                    <li class="flex items-center">
+                                    <li class="flex items-center scroll-animate fade-left stagger-item">
                                         <i class="fas fa-check text-purple-600 mr-2"></i>
                                         Documentação completa
-                                    </li>
-                                    <li class="flex items-center">
-                                        <i class="fas fa-check text-purple-600 mr-2"></i>
-                                        Treinamento da equipe
                                     </li>
                                 </ul>
                             </div>
@@ -511,26 +498,26 @@
             </div>
             
             <!-- Garantias -->
-            <div class="mt-16 bg-gradient-to-r from-brand-dark to-brand-blue text-white p-8 rounded-3xl">
+            <div class="mt-16 bg-gradient-to-r from-brand-dark to-brand-blue text-white p-8 rounded-3xl scroll-animate scale-in" data-delay="800">
                 <div class="text-center">
                     <h3 class="text-2xl font-bold mb-6">Garantias do Projeto</h3>
-                    <div class="grid md:grid-cols-3 gap-8">
-                        <div class="text-center">
-                            <div class="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                    <div class="grid md:grid-cols-3 gap-8" data-stagger-group data-stagger-delay="200">
+                        <div class="text-center scroll-animate fade-up stagger-item">
+                            <div class="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mx-auto mb-4 bounce-in">
                                 <i class="fas fa-shield-alt text-2xl"></i>
                             </div>
                             <h4 class="font-semibold mb-2">Funcionalidade Garantida</h4>
                             <p class="text-white/80 text-sm">100% funcional conforme especificação</p>
                         </div>
-                        <div class="text-center">
-                            <div class="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                        <div class="text-center scroll-animate fade-up stagger-item">
+                            <div class="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mx-auto mb-4 bounce-in">
                                 <i class="fas fa-tools text-2xl"></i>
                             </div>
                             <h4 class="font-semibold mb-2">Suporte Técnico</h4>
                             <p class="text-white/80 text-sm">30 dias de suporte incluído</p>
                         </div>
-                        <div class="text-center">
-                            <div class="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                        <div class="text-center scroll-animate fade-up stagger-item">
+                            <div class="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mx-auto mb-4 bounce-in">
                                 <i class="fas fa-clock text-2xl"></i>
                             </div>
                             <h4 class="font-semibold mb-2">Prazo Garantido</h4>
@@ -545,27 +532,57 @@
     <!-- CTA -->
     <section class="py-16 sm:py-20 bg-white">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 class="text-3xl sm:text-4xl font-bold text-brand-dark mb-6">
+            <div class="inline-flex items-center bg-brand-green/20 text-brand-dark rounded-full px-4 py-2 text-sm font-medium mb-6 scroll-animate fade-up">
+                Transforme seu negócio hoje
+            </div>
+            
+            <h2 class="text-3xl sm:text-4xl font-bold text-brand-dark mb-6 scroll-animate fade-up" data-delay="200">
                 Pronto para <span class="text-brand-blue">Automatizar</span> Seus Processos?
             </h2>
             
-            <p class="text-lg text-brand-dark/70 mb-8 max-w-2xl mx-auto">
+            <p class="text-lg text-brand-dark/70 mb-8 max-w-2xl mx-auto scroll-animate fade-up" data-delay="400">
                 Com metodologia comprovada e experiência sólida, estou pronto para transformar a operação da sua empresa.
             </p>
             
-            <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="https://wa.me/5519997330171?text=Olá André! Vi seu perfil e gostaria de conversar sobre automação para minha empresa." 
+            <div class="flex flex-col sm:flex-row gap-4 justify-center scroll-animate fade-up" data-delay="600">
+                <a href="https://wa.me/5519997330171?text=Olá Axel! Vi seu perfil e gostaria de conversar sobre automação para minha empresa." 
                    target="_blank"
-                   class="bg-brand-blue hover:bg-brand-blue/90 text-white px-8 py-4 rounded-2xl font-bold transition-all duration-300 shadow-xl hover:shadow-2xl flex items-center justify-center space-x-3">
+                   class="bg-brand-blue hover:bg-brand-blue/90 text-white px-8 py-4 rounded-2xl font-bold transition-all duration-300 shadow-xl hover:shadow-2xl flex items-center justify-center space-x-3 button-animate glow">
                     <i class="fab fa-whatsapp text-xl"></i>
-                    <span>Falar com André</span>
+                    <span>Falar com Axel</span>
                 </a>
                 
                 <a href="projetos.html" 
-                   class="border-2 border-brand-dark/20 hover:border-brand-blue text-brand-dark hover:text-brand-blue px-8 py-4 rounded-2xl font-bold transition-all duration-300 flex items-center justify-center space-x-3 hover:shadow-lg">
+                   class="border-2 border-brand-dark/20 hover:border-brand-blue text-brand-dark hover:text-brand-blue px-8 py-4 rounded-2xl font-bold transition-all duration-300 flex items-center justify-center space-x-3 hover:shadow-lg button-animate">
                     <i class="fas fa-briefcase text-lg"></i>
                     <span>Ver Projetos</span>
                 </a>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16" data-stagger-group data-stagger-delay="200">
+                <div class="text-center scroll-animate fade-up stagger-item">
+                    <div class="w-16 h-16 bg-brand-green/20 rounded-2xl flex items-center justify-center mx-auto mb-4 bounce-in">
+                        <i class="fas fa-phone text-2xl text-brand-green"></i>
+                    </div>
+                    <h3 class="font-bold text-brand-dark mb-2">Resposta Rápida</h3>
+                    <p class="text-brand-dark/70">Retornamos em até 20 minutos</p>
+                </div>
+                
+                <div class="text-center scroll-animate fade-up stagger-item">
+                    <div class="w-16 h-16 bg-brand-blue/20 rounded-2xl flex items-center justify-center mx-auto mb-4 bounce-in">
+                        <i class="fas fa-handshake text-2xl text-brand-blue"></i>
+                    </div>
+                    <h3 class="font-bold text-brand-dark mb-2">Consultoria Gratuita</h3>
+                    <p class="text-brand-dark/70">Análise sem custo</p>
+                </div>
+                
+                <div class="text-center scroll-animate fade-up stagger-item">
+                    <div class="w-16 h-16 bg-yellow-100 rounded-2xl flex items-center justify-center mx-auto mb-4 bounce-in">
+                        <i class="fas fa-trophy text-2xl text-yellow-600"></i>
+                    </div>
+                    <h3 class="font-bold text-brand-dark mb-2">Resultados Garantidos</h3>
+                    <p class="text-brand-dark/70">Redução de tempo em 60-80%</p>
+                </div>
             </div>
         </div>
     </section>
@@ -574,7 +591,7 @@
     <footer class="bg-brand-dark text-white py-12">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid md:grid-cols-4 gap-8">
-                <div class="md:col-span-2">
+                <div class="md:col-span-2 scroll-animate fade-right">
                     <div class="flex items-center space-x-3 mb-6">
                         <div class="w-10 h-10 flex items-center justify-center">
                             <img src="assets/images/ICONE2.png" alt="Axel Integrações" class="w-10 h-10 object-contain">
@@ -587,41 +604,51 @@
                     <p class="text-brand-light/80 leading-relaxed max-w-md mb-6">
                         Especialista em automação de processos e integração de sistemas. Transformando a forma como sua empresa trabalha através de soluções inteligentes e personalizadas.
                     </p>
-                    <div class="flex space-x-4">
+                    <div class="flex space-x-4" data-stagger-group data-stagger-delay="100">
                         <a href="https://wa.me/5519997330171" 
                            target="_blank"
-                           class="w-10 h-10 bg-brand-green/20 rounded-lg flex items-center justify-center text-brand-green hover:bg-brand-green hover:text-brand-dark transition-all duration-300">
+                           class="w-10 h-10 bg-brand-green/20 rounded-lg flex items-center justify-center text-brand-green hover:bg-brand-green hover:text-brand-dark transition-all duration-300 scroll-animate scale-in stagger-item">
                             <i class="fab fa-whatsapp"></i>
                         </a>
+                        <a href="https://www.instagram.com/axel.integracoes" 
+                           target="_blank"
+                           class="w-10 h-10 bg-brand-green/20 rounded-lg flex items-center justify-center text-brand-green hover:bg-brand-green hover:text-brand-dark transition-all duration-300 scroll-animate scale-in stagger-item">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/andreaxel6439a4b18b/" 
+                           target="_blank"
+                           class="w-10 h-10 bg-brand-green/20 rounded-lg flex items-center justify-center text-brand-green hover:bg-brand-green hover:text-brand-dark transition-all duration-300 scroll-animate scale-in stagger-item">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
                         <a href="mailto:axelintegracoes@gmail.com" 
-                           class="w-10 h-10 bg-brand-light/20 rounded-lg flex items-center justify-center text-brand-light hover:bg-brand-light hover:text-brand-dark transition-all duration-300">
+                           class="w-10 h-10 bg-brand-light/20 rounded-lg flex items-center justify-center text-brand-light hover:bg-brand-light hover:text-brand-dark transition-all duration-300 scroll-animate scale-in stagger-item">
                             <i class="fas fa-envelope"></i>
                         </a>
                     </div>
                 </div>
                 
-                <div>
+                <div class="scroll-animate fade-up" data-delay="200">
                     <h3 class="font-bold text-lg mb-6 text-brand-green">Navegação</h3>
-                    <ul class="space-y-3 text-brand-light/80">
-                        <li><a href="index.html" class="hover:text-brand-green transition-colors">Início</a></li>
-                        <li><a href="sobre.html" class="hover:text-brand-green transition-colors">Sobre</a></li>
-                        <li><a href="projetos.html" class="hover:text-brand-green transition-colors">Projetos</a></li>
-                        <li><a href="contato.html" class="hover:text-brand-green transition-colors">Contato</a></li>
+                    <ul class="space-y-3 text-brand-light/80" data-stagger-group data-stagger-delay="100">
+                        <li class="scroll-animate fade-left stagger-item"><a href="index.html" class="hover:text-brand-green transition-colors">Início</a></li>
+                        <li class="scroll-animate fade-left stagger-item"><a href="sobre.html" class="hover:text-brand-green transition-colors">Sobre</a></li>
+                        <li class="scroll-animate fade-left stagger-item"><a href="projetos.html" class="hover:text-brand-green transition-colors">Projetos</a></li>
+                        <li class="scroll-animate fade-left stagger-item"><a href="contato.html" class="hover:text-brand-green transition-colors">Contato</a></li>
                     </ul>
                 </div>
                 
-                <div>
+                <div class="scroll-animate fade-up" data-delay="400">
                     <h3 class="font-bold text-lg mb-6 text-brand-blue">Serviços</h3>
-                    <ul class="space-y-3 text-brand-light/80">
-                        <li>Automação de Processos</li>
-                        <li>Integração de Sistemas</li>
-                        <li>Notificações Automáticas</li>
-                        <li>Soluções Personalizadas</li>
+                    <ul class="space-y-3 text-brand-light/80" data-stagger-group data-stagger-delay="100">
+                        <li class="scroll-animate fade-left stagger-item">Automação de Processos</li>
+                        <li class="scroll-animate fade-left stagger-item">Integração de Sistemas</li>
+                        <li class="scroll-animate fade-left stagger-item">Notificações Automáticas</li>
+                        <li class="scroll-animate fade-left stagger-item">Soluções Personalizadas</li>
                     </ul>
                 </div>
             </div>
             
-            <div class="border-t border-brand-light/10 mt-12 pt-8">
+            <div class="border-t border-brand-light/10 mt-12 pt-8 scroll-animate fade-up" data-delay="600">
                 <div class="text-center text-brand-light/60 text-sm">
                     &copy; 2025 Axel Integrações. Todos os direitos reservados.
                 </div>
@@ -652,23 +679,18 @@
                 });
             });
             
-            // Fade-in animation on scroll
-            const observerOptions = {
-                threshold: 0.1,
-                rootMargin: '0px 0px -50px 0px'
-            };
-            
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
+            // Smooth scroll for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
                     }
                 });
-            }, observerOptions);
-            
-            // Observe all elements with fade-in class
-            document.querySelectorAll('.fade-in').forEach(el => {
-                observer.observe(el);
             });
         });
     </script>

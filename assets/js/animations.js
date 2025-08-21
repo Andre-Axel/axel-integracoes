@@ -112,7 +112,7 @@ class AxelAnimations {
      */
     animateCounter(element) {
         const target = parseInt(element.dataset.target || element.textContent.replace(/\D/g, ''));
-        const duration = parseInt(element.dataset.duration) || 2000;
+        const duration = parseInt(element.dataset.duration) || 1000;
         const suffix = element.dataset.suffix || '';
         const prefix = element.dataset.prefix || '';
         
