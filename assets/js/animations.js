@@ -1,6 +1,7 @@
 /**
- * AXEL INTEGRAÇÕES - SISTEMA DE ANIMAÇÕES CORRIGIDO
+ * AXEL INTEGRAÇÕES - SISTEMA DE ANIMAÇÕES OTIMIZADO
  * Arquivo: assets/js/animations.js
+ * Mobile-first e otimizado para performance
  */
 
 class AxelAnimations {
@@ -22,12 +23,11 @@ class AxelAnimations {
         this.initProgressBars();
         this.initParallax();
         this.initHoverEffects();
-        this.initTypingEffects();
         this.setupStaggerAnimations();
     }
 
     /**
-     * Configuração das animações de scroll - CORRIGIDO
+     * Configuração das animações de scroll - OTIMIZADO
      */
     initScrollAnimations() {
         const observerOptions = {
@@ -35,7 +35,6 @@ class AxelAnimations {
             rootMargin: '0px 0px -50px 0px'
         };
 
-        // CORREÇÃO: Usar arrow function para preservar 'this'
         const scrollObserver = new IntersectionObserver((entries) => {
             entries.forEach((entry) => {
                 if (entry.isIntersecting) {
@@ -43,10 +42,7 @@ class AxelAnimations {
                     
                     setTimeout(() => {
                         entry.target.classList.add('visible');
-                        
-                        // CORREÇÃO: Chamar método corretamente
                         this.handleSpecialAnimations(entry.target);
-                        
                     }, delay);
                     
                     scrollObserver.unobserve(entry.target);
@@ -61,7 +57,7 @@ class AxelAnimations {
     }
 
     /**
-     * NOVO: Sistema dedicado para contadores
+     * Sistema dedicado para contadores
      */
     initCounterAnimations() {
         const counters = document.querySelectorAll('.counter');
@@ -86,12 +82,11 @@ class AxelAnimations {
     }
 
     /**
-     * Manipula animações especiais - CORRIGIDO
+     * Manipula animações especiais
      */
     handleSpecialAnimations(element) {
         if (element.classList.contains('counter')) {
-            // Counter já tem seu próprio observer, pular aqui
-            return;
+            return; // Counter já tem seu próprio observer
         }
         
         if (element.classList.contains('progress-bar')) {
@@ -108,7 +103,7 @@ class AxelAnimations {
     }
 
     /**
-     * Animação de contadores - CORRIGIDO E MELHORADO
+     * Animação de contadores
      */
     animateCounter(element) {
         const target = parseInt(element.dataset.target || element.textContent.replace(/\D/g, ''));
@@ -195,7 +190,7 @@ class AxelAnimations {
     }
 
     /**
-     * Sistema de parallax
+     * Sistema de parallax - Desabilitado em mobile
      */
     initParallax() {
         if (window.innerWidth <= 768) return;
@@ -233,23 +228,29 @@ class AxelAnimations {
     }
 
     /**
-     * Efeitos de hover
+     * Efeitos de hover - Otimizado para touch devices
      */
     initHoverEffects() {
+        const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+        
         document.querySelectorAll('.card-animate').forEach(card => {
-            card.addEventListener('mouseenter', () => {
-                this.animateCardHover(card, true);
-            });
-            
-            card.addEventListener('mouseleave', () => {
-                this.animateCardHover(card, false);
-            });
+            if (!isTouchDevice) {
+                card.addEventListener('mouseenter', () => {
+                    this.animateCardHover(card, true);
+                });
+                
+                card.addEventListener('mouseleave', () => {
+                    this.animateCardHover(card, false);
+                });
+            }
         });
 
         document.querySelectorAll('.button-animate').forEach(button => {
-            button.addEventListener('mouseenter', () => {
-                this.triggerShimmerEffect(button);
-            });
+            if (!isTouchDevice) {
+                button.addEventListener('mouseenter', () => {
+                    this.triggerShimmerEffect(button);
+                });
+            }
         });
     }
 
@@ -286,28 +287,6 @@ class AxelAnimations {
         setTimeout(() => {
             shimmer.style.left = '100%';
         }, 10);
-    }
-
-    /**
-     * Efeitos de digitação
-     */
-    initTypingEffects() {
-        document.querySelectorAll('[data-typing]').forEach(element => {
-            const text = element.dataset.typing || element.textContent;
-            const speed = parseInt(element.dataset.typingSpeed) || 100;
-            
-            element.textContent = '';
-            
-            let i = 0;
-            const timer = setInterval(() => {
-                element.textContent += text.charAt(i);
-                i++;
-                
-                if (i >= text.length) {
-                    clearInterval(timer);
-                }
-            }, speed);
-        });
     }
 
     /**
