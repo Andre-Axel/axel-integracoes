@@ -84,7 +84,7 @@
                 <!-- Desktop Menu -->
                 <div class="hidden md:flex items-center space-x-8 scroll-animate fade-down" data-delay="200">
                     <a href="index.html" class="text-brand-dark/80 hover:text-brand-blue px-3 py-2 font-medium transition-colors">Início</a>
-                    <a href="sobre.html" class="text-brand-dark/80 hover:text-brand-blue px-3 py-2 font-medium transition-colors">Sobre</a>
+                    <a href="agente-ia.html" class="text-brand-dark/80 hover:text-brand-blue px-3 py-2 font-medium transition-colors">Agente IA</a>
                     <a href="projetos.html" class="nav-active px-3 py-2 font-medium transition-colors">Projetos</a>
                     <a href="contato.html" class="text-brand-dark/80 hover:text-brand-blue px-3 py-2 font-medium transition-colors">Contato</a>
                 </div>
@@ -501,7 +501,7 @@
                     <div class="text-white/80">Redução Média de Tempo</div>
                 </div>
                 <div class="text-center scroll-animate scale-in stagger-item">
-                    <div class="text-4xl sm:text-5xl font-bold text-brand-green mb-2 counter" data-target="95" data-suffix="%">95%</div>
+                    <div class="text-4xl sm:text-5xl font-bold text-brand-green mb-2 counter" data-target="100" data-suffix="%">95%</div>
                     <div class="text-white/80">Satisfação dos Clientes</div>
                 </div>
                 <div class="text-center scroll-animate scale-in stagger-item">
@@ -571,70 +571,80 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-brand-dark text-white py-12">
+    <footer class="bg-brand-dark text-white py-8 sm:py-12">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid md:grid-cols-4 gap-8">
-                <div class="md:col-span-2 scroll-animate fade-right">
-                    <div class="flex items-center space-x-3 mb-6">
-                        <div class="w-10 h-10 flex items-center justify-center">
-                            <img src="assets/images/ICONE2.png" alt="Axel Integrações" class="w-10 h-10 object-contain">
-                        </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+                <!-- Coluna 1: Logo e Descrição -->
+                <div class="scroll-animate fade-right">
+                    <div class="flex items-center space-x-3 mb-4">
+                        <img src="assets/images/ICONE2.png" alt="Axel Integrações" class="w-10 h-10">
                         <div>
-                            <span class="font-bold text-xl text-white">Axel Integrações</span>
+                            <span class="font-bold text-lg sm:text-xl">Axel Integrações</span>
                             <div class="text-xs text-brand-green font-medium">Automação & Integração</div>
                         </div>
                     </div>
-                    <p class="text-brand-light/80 leading-relaxed max-w-md mb-6">
+                    <p class="text-sm text-brand-light/80 mb-6 max-w-sm">
                         Especialista em automação de processos e integração de sistemas. Transformando a forma como sua empresa trabalha através de soluções inteligentes e personalizadas.
                     </p>
-                    <div class="flex space-x-4" data-stagger-group data-stagger-delay="100">
+                    <div class="flex space-x-3">
                         <a href="https://wa.me/5519997330171" 
                            target="_blank"
-                           class="w-10 h-10 bg-brand-green/20 rounded-lg flex items-center justify-center text-brand-green hover:bg-brand-green hover:text-brand-dark transition-all duration-300 scroll-animate scale-in stagger-item">
-                            <i class="fab fa-whatsapp"></i>
-                        </a>
-                        <a href="https://www.instagram.com/axel.integracoes" 
-                           target="_blank"
-                           class="w-10 h-10 bg-brand-green/20 rounded-lg flex items-center justify-center text-brand-green hover:bg-brand-green hover:text-brand-dark transition-all duration-300 scroll-animate scale-in stagger-item">
-                            <i class="fab fa-instagram"></i>
+                           class="w-10 h-10 bg-brand-green/20 hover:bg-brand-green rounded-lg flex items-center justify-center text-brand-green hover:text-brand-dark transition-all">
+                            <i class="fab fa-whatsapp text-lg"></i>
                         </a>
                         <a href="https://www.linkedin.com/in/andreaxel6439a4b18b/" 
                            target="_blank"
-                           class="w-10 h-10 bg-brand-green/20 rounded-lg flex items-center justify-center text-brand-green hover:bg-brand-green hover:text-brand-dark transition-all duration-300 scroll-animate scale-in stagger-item">
-                            <i class="fab fa-linkedin"></i>
+                           class="w-10 h-10 bg-brand-green/20 hover:bg-brand-green rounded-lg flex items-center justify-center text-brand-green hover:text-brand-dark transition-all">
+                            <i class="fab fa-linkedin text-lg"></i>
+                        </a>
+                        <a href="https://www.instagram.com/axel.integracoes" 
+                           target="_blank"
+                           class="w-10 h-10 bg-brand-green/20 hover:bg-brand-green rounded-lg flex items-center justify-center text-brand-green hover:text-brand-dark transition-all">
+                            <i class="fab fa-instagram text-lg"></i>
                         </a>
                         <a href="mailto:axelintegracoes@gmail.com" 
-                           class="w-10 h-10 bg-brand-light/20 rounded-lg flex items-center justify-center text-brand-light hover:bg-brand-light hover:text-brand-dark transition-all duration-300 scroll-animate scale-in stagger-item">
-                            <i class="fas fa-envelope"></i>
+                           class="w-10 h-10 bg-brand-light/20 hover:bg-brand-light rounded-lg flex items-center justify-center text-brand-light hover:text-brand-dark transition-all">
+                            <i class="fas fa-envelope text-lg"></i>
                         </a>
                     </div>
                 </div>
                 
+                <!-- Coluna 2: Navegação -->
                 <div class="scroll-animate fade-up" data-delay="200">
-                    <h3 class="font-bold text-lg mb-6 text-brand-green">Navegação</h3>
-                    <ul class="space-y-3 text-brand-light/80" data-stagger-group data-stagger-delay="100">
-                        <li class="scroll-animate fade-left stagger-item"><a href="index.html" class="hover:text-brand-green transition-colors">Início</a></li>
-                        <li class="scroll-animate fade-left stagger-item"><a href="sobre.html" class="hover:text-brand-green transition-colors">Sobre</a></li>
-                        <li class="scroll-animate fade-left stagger-item"><a href="projetos.html" class="hover:text-brand-green transition-colors">Projetos</a></li>
-                        <li class="scroll-animate fade-left stagger-item"><a href="contato.html" class="hover:text-brand-green transition-colors">Contato</a></li>
+                    <h3 class="font-bold text-base sm:text-lg mb-4 text-brand-green">Navegação</h3>
+                    <ul class="space-y-2 text-sm text-brand-light/80">
+                        <li><a href="index.html" class="hover:text-brand-green transition-colors">Início</a></li>
+                        <li><a href="agente-ia.html" class="hover:text-brand-green transition-colors">Agente IA WhatsApp</a></li>
+                        <li><a href="projetos.html" class="hover:text-brand-green transition-colors">Projetos</a></li>
                     </ul>
                 </div>
                 
+                <!-- Coluna 3: Contato -->
                 <div class="scroll-animate fade-up" data-delay="400">
-                    <h3 class="font-bold text-lg mb-6 text-brand-blue">Serviços</h3>
-                    <ul class="space-y-3 text-brand-light/80" data-stagger-group data-stagger-delay="100">
-                        <li class="scroll-animate fade-left stagger-item">Automação de Processos</li>
-                        <li class="scroll-animate fade-left stagger-item">Integração de Sistemas</li>
-                        <li class="scroll-animate fade-left stagger-item">WhatsApp Business</li>
-                        <li class="scroll-animate fade-left stagger-item">Soluções Personalizadas</li>
+                    <h3 class="font-bold text-base sm:text-lg mb-4 text-brand-green">Contato</h3>
+                    <ul class="space-y-3 text-sm text-brand-light/80">
+                        <li class="flex items-center space-x-3">
+                            <i class="fab fa-whatsapp text-brand-green"></i>
+                            <a href="https://wa.me/5519997330171" target="_blank" class="hover:text-brand-green transition-colors">(19) 99733-0171</a>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <i class="fas fa-envelope text-brand-green"></i>
+                            <a href="mailto:axelintegracoes@gmail.com" class="hover:text-brand-green transition-colors">axelintegracoes@gmail.com</a>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <i class="fas fa-map-marker-alt text-brand-green"></i>
+                            <span>Piracicaba, SP</span>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <i class="fas fa-clock text-brand-green"></i>
+                            <span>Segunda à Sexta, 8h-18h</span>
+                        </li>
                     </ul>
                 </div>
             </div>
             
-            <div class="border-t border-brand-light/10 mt-12 pt-8 scroll-animate fade-up" data-delay="600">
-                <div class="text-center text-brand-light/60 text-sm">
-                    &copy; 2025 Axel Integrações. Todos os direitos reservados.
-                </div>
+            <div class="border-t border-brand-light/10 pt-6 text-center text-brand-light/60 text-xs sm:text-sm scroll-animate fade-up" data-delay="600">
+                &copy; 2025 Axel Integrações. Todos os direitos reservados.
             </div>
         </div>
     </footer>
